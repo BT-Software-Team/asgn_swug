@@ -1,5 +1,7 @@
 # Troubleshooting
 
+This page collects the most common problems — the Software won't start, an installation or analysis fails, results look wrong, or a dataset won't import — with the checks and fixes for each. If nothing here resolves the issue, contact Asuragen Technical Support.
+
 ---
 
 ## Software Won't Start After Restarting (Windows)
@@ -58,7 +60,7 @@ Windows 11: Start → Settings → System → About → Windows specifications.
 
 ### Verify Analysis Prerequisites
 
-1. **Docker images not fully downloaded:** If a new Mix is analyzed and fails, check `C:\Program Files\asuragen\carrier-plus-images.log` for `Docker image pull completed successfully`. If missing, confirm internet connectivity, restart the computer, and re-run within 24 hours.
+1. **Docker images not fully downloaded:** If a new Mix is analyzed and fails, check the image-pull log for `Docker image pull completed successfully` — on Windows, `C:\Program Files\asuragen\carrier-plus-images.log`; on Ubuntu Linux, `/var/log/asgn-carrier-plus-images.log`. If missing, confirm internet connectivity, restart the computer, and re-run within 24 hours.
 2. **Firewall or network restrictions:** Review [System Requirements](../getting-started/system-requirements.md#network-requirements).
 3. **Analysis metadata:** Review the Analysis Configuration page to confirm all calibrators and Mixes are correctly configured.
 
@@ -144,4 +146,4 @@ sudo /usr/local/bin/asuragen/asgn_onereporter_uninstaller_linux.sh
 4. When prompted, choose whether to delete or keep the uninstaller file.
 5. Press any key to close when complete.
 
-> **Analysis data is preserved.** Results and imported datasets remain at `[User Data Path]` (`C:\ProgramData\asuragen` by default) after uninstallation. See [Data Storage & Archival](data-storage.md) for managing this data.
+> **Analysis data is preserved.** Results and imported datasets remain at `[User Data Path]` (`C:\ProgramData\asuragen` by default) after uninstallation. See [Data Storage & Archival](../reference/data-storage.md) for managing this data.

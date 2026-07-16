@@ -67,7 +67,7 @@ After a dataset is imported, it is copied to a managed location:
 
 ---
 
-## Add a Remote Data Source (SSH/SFTP)
+## Add a Remote Data Source (SSH/SFTP) {#add-a-remote-data-source}
 
 Use this method to connect to a GridION device, another sequencing workstation, or a network file server.
 
@@ -123,7 +123,7 @@ Use this when sequencing data has moved to a different path, or when SSH credent
 
 ---
 
-## Set Up Remote Access
+## Set Up Remote Access {#remote-access}
 
 Remote access controls whether other computers on the network can connect to the Software.
 

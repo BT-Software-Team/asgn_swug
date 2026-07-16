@@ -1,22 +1,8 @@
-# Review & Download Results
+# Download Results
 
-## View Results
+Every completed analysis writes its full output to disk, and you can browse or download any file directly from the Software. This page covers downloading results and the layout of the output folder.
 
-1. From the **Analysis Dashboard**, click an analysis with status **Complete**.
-
-2. Double-click the row (or click **Results**) to open the **Sample Summary** — a high-level view of key results per sample.
-
-3. From Sample Summary, click a sample row and then **Genotype Summary** (or double-click the row) to see per-gene genotype results filtered to a single sample and barcode. Clear the filters to view all entries.
-
-4. From Genotype Summary, click a row and then **Variant Results** (or double-click) to see detailed variant-level data filtered for a single sample, barcode, and gene. Clear filters to view all entries.
-
-5. From Variant Results, click a row and then **View Variant Figure** to open an interactive visualization for that gene in a new tab.
-
-### Share Results
-
-URLs for Sample Summary, Genotype Summary, and Variant Results are **permalinks** — they preserve the current filter state and are unique to each analysis and page. Share them directly with collaborators who have access to the Software.
-
----
+> **Prerequisite:** The analysis must have status **Complete**.
 
 ## Download Results
 
@@ -105,17 +91,3 @@ results/
 ```
 
 For detailed descriptions of each file's columns and contents, see [Results Description](../reference/results-description.md).
-
----
-
-## Post-run Basecalling
-
-If run data was generated with an older or incompatible MinKNOW version, rebasecall the raw data before analysis. See the Software Release Notes for specific basecaller model requirements for your pipeline version.
-
-1. Follow MinKNOW's post-run basecalling guide. At step 4, create a new output folder at a **different directory level** from the original run — not nested inside it — so the rebasecalled dataset can be imported as a distinct dataset.
-
-2. The default output subdirectory for rebasecalled `fastq.gz` files is `fastq_pass`. Confirm this matches the import pattern configured in your data source (see [Configure Data Sources](../configuration/data-sources.md)).
-
-3. *(Optional)* Copy the original run's `report.json` file into the rebasecalled folder to enable MinKNOW compatibility checks. If omitted, the Software will show basecaller model warnings — these can be ignored when using post-run basecalled data.
-
-4. Resume the [Analysis Workflow](workflow.md) and select **Import Dataset…** to import the rebasecalled dataset.

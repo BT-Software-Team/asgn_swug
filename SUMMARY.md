@@ -12,15 +12,24 @@
 - [Configure Data Sources](configuration/data-sources.md)
 - [Panel Filter Configurations](configuration/panel-filters.md)
 
-## Analysis
+## Running an Analysis
 
-- [Analysis Workflow](analysis/workflow.md)
-- [Monitor Analysis Execution](analysis/monitoring.md)
-- [Review & Download Results](analysis/results.md)
+- [Create an Analysis](running-an-analysis/create-an-analysis.md)
+- [Configure an Analysis](running-an-analysis/configure-an-analysis.md)
+- [Start & Monitor Execution](running-an-analysis/start-and-monitor.md)
+- [Post-run Basecalling](running-an-analysis/post-run-basecalling.md)
+
+## Analysis Results
+
+- [Review Results](analysis-results/review-results.md)
+- [Download Results](analysis-results/download-results.md)
+
+## Troubleshooting
+
+- [Common Errors](troubleshooting/common-errors.md)
 
 ## Reference
 
 - [Results Description](reference/results-description.md)
-- [Troubleshooting](reference/troubleshooting.md)
 - [Data Storage & Archival](reference/data-storage.md)
 - [Third-Party Licenses](reference/licenses.md)

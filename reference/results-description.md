@@ -1,6 +1,6 @@
 # Results Description
 
-This section explains how to interpret analysis results. Once an analysis reaches **Complete** status, a `results/` directory is available containing all outputs. See [Review & Download Results](../analysis/results.md) for how to access them.
+This section explains how to interpret analysis results. Once an analysis reaches **Complete** status, a `results/` directory is available containing all outputs. See [Review Results](../analysis-results/review-results.md) and [Download Results](../analysis-results/download-results.md) for how to access them.
 
 ---
 

@@ -1,4 +1,10 @@
-# Monitor Analysis Execution
+# Start & Monitor Execution
+
+After you click **Analyze**, the analysis is queued and runs on the Software's pipeline. This page explains how to read each status, customize the dashboard tables, and find the logs an analysis produces.
+
+> Analyses run **one at a time, in order**. A newly started analysis waits with status **In Queue** until the one ahead of it finishes.
+
+## Track Status
 
 Navigate to the **Analysis Dashboard** and check the **Status** column. Refresh the page to see updates.
 
@@ -10,7 +16,7 @@ Navigate to the **Analysis Dashboard** and check the **Status** column. Refresh 
 | **In Queue** | Waiting for a previous analysis to complete | Wait — analyses run one at a time, in order |
 | **Running** | Analysis is actively processing | Wait |
 | **X processed of Y** | Analysis is progressing | Wait — the Y value increases as tasks are discovered |
-| **Error** | Analysis did not complete or was cancelled | See [Troubleshooting](../reference/troubleshooting.md); reload and retry |
+| **Error** | Analysis did not complete or was cancelled | See [Troubleshooting](../troubleshooting/common-errors.md); reload and retry |
 | **Complete** | Analysis finished successfully | Review results or download files |
 
 > **Analysis time** varies by number of samples, read depth, and available compute resources.
@@ -39,6 +45,6 @@ Each data table in the Software can be customized for better visualization.
 
 Each analysis produces a `run.log` file containing the start and completion time, pipeline version, sample summary, and a list of any failed analyses. Additional logs are available for diagnosing errors.
 
-If an error is listed in the **Failed Analyses** section of `run.log`, refer to [Troubleshooting](../reference/troubleshooting.md) or contact Asuragen Technical Support.
+If an error is listed in the **Failed Analyses** section of `run.log`, refer to [Troubleshooting](../troubleshooting/common-errors.md) or contact Asuragen Technical Support.
 
 **Output path:** `[Analysis Id]/results/logs/run.log`
