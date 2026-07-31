@@ -57,7 +57,7 @@ The Software must be installed with a Linux user account that has administrator 
    http://localhost:9000
    ```
 
-   If installation was successful, the **About** button will display the installed components and version.
+   If installation was successful, the **login page** will load.
 
 ---
 

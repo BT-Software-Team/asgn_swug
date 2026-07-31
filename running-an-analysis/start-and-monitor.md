@@ -21,19 +21,32 @@ Navigate to the **Analysis Dashboard** and check the **Status** column. Refresh 
 
 > **Analysis time** varies by number of samples, read depth, and available compute resources.
 
+## Row Actions
+
+Click the **⋯** at the end of any row on the Analysis Dashboard for actions available to that analysis:
+
+| Status | Available actions |
+|--------|--------------------|
+| **New** / **Error** | Configure Analysis, Delete |
+| **In Queue** / **Running** / **X processed of Y** | Cancel |
+| **Complete** | Sample Summary, View Files, Delete |
+| **Import Error** / **Import Initializing** | Delete |
+
+**Cancel a queued or running analysis:** click **⋯** → **Cancel**, then confirm **Yes, cancel this analysis**. Allow a few seconds for the status to update.
+
 ---
 
 ## Table Controls
 
-Each data table in the Software can be customized for better visualization.
+Each data table in the Software has a toolbar that can be used to customize its view.
 
-**Columns** — click **Columns** above the header bar and toggle checkboxes to show or hide columns. For example, hide the Pipeline column in the Analysis Dashboard to give more space to Dataset names.
+**Search** — click the magnifying glass to expand a quick-search box and filter rows by any visible text.
 
-**Filters** — click **Filters** to add filter criteria. Filters can be stacked with AND/OR logic. A cone icon appears next to any filtered column header. To remove filters, click the **X** next to a filter row or **Remove All** at the bottom.
+**Columns** — click **Columns** in the toolbar and toggle checkboxes to show or hide columns. For example, hide the Pipeline column in the Analysis Dashboard to give more space to Dataset names.
 
-**Row density** — click **Densify** and choose Compact, Standard, or Comfortable.
+**Filters** — click **Filters** to add filter criteria. Filters can be stacked with AND/OR logic. A dot badge appears on the **Filters** icon while any filter is active. To remove filters, click the **X** next to a filter row or **Remove All** at the bottom.
 
-**Export** — click **Export** → **Download as CSV** or **Print** to export the current filtered/column view.
+**Export** — click the **Export** (download) icon → **Download as CSV** or **Print** to export the current filtered/column view.
 
 **Column sorting** — click the arrow next to any column name to sort.
 

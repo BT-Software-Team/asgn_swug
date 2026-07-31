@@ -33,7 +33,7 @@ Back on the **Analysis Dashboard**, refresh and watch the **Status** column unti
 
 ## 5. Review your results
 
-Click the **Complete** analysis and double-click it (or click **Results**) to open the **Sample Summary**. From there, drill into **Genotype Summary** → **Variant Results** → **View Variant Figure**.
+Double-click the **Complete** analysis (or click its **⋯** menu and choose **Sample Summary**) to open the **Sample Summary**. From there, drill into **Genotype Summary** → **Variant Results** → **View Variant Figure**.
 
 *Full details: [Review Results](../analysis-results/review-results.md).*
 

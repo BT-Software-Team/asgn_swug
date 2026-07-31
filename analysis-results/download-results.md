@@ -6,7 +6,7 @@ Every completed analysis writes its full output to disk, and you can browse or d
 
 ## Download Results
 
-1. From the Analysis Dashboard, select an analysis with status **Complete** and click **Download**.
+1. From the Analysis Dashboard, click the **⋯** menu on an analysis with status **Complete** and choose **View Files**.
 
 2. Navigate the folder tree to find specific files. The folder structure mirrors the on-disk layout at:
 

@@ -20,21 +20,28 @@ After a dataset is imported, it is copied to a managed location:
 
 ---
 
+## Open System Configuration
+
+Data source setup lives in **System Configuration**, not the account **Settings** menu.
+
+1. From the **Analysis Dashboard**, click the **gear icon** in the table toolbar.
+2. In the left-hand menu, select **Data Sources**.
+
 ## Add a Local Data Source
 
-1. Click **Settings** in the navigation bar.
+1. Open **System Configuration** → **Data Sources**.
 
-2. Under **Data Sources**, click **Create**.
+2. Under **Add new data source**, click **Create New**.
 
 3. Fill in the following fields:
 
    | Field | Description | Required |
    |-------|-------------|----------|
-   | **Endpoint Name** | Unique display name for this data source | ✅ |
-   | **Endpoint Type** | Choose `Local Computer` | ✅ |
-   | **Run Data Path** | Path to the folder containing sequencing runs (Linux-style) | ✅ |
-   | **Import Patterns** | RegEx patterns that identify run files (defaults work for most users) | ✅ |
-   | **Exclude Folders** | Folder names to hide from the import list | Optional |
+   | **Name** | Unique display name for this data source | ✅ |
+   | **Type** | Choose `Local Computer` | ✅ |
+   | **Source Path** | Path to the folder containing sequencing runs (Linux-style) | ✅ |
+   | **Import patterns** | RegEx patterns that identify run files (defaults work for most users) | ✅ |
+   | **Exclude folders** | Folder names to hide from the import list | Optional |
 
    **Converting Windows paths to Linux-style:**
 
@@ -59,11 +66,11 @@ After a dataset is imported, it is copied to a managed location:
 
    Use `.*` for variable path segments, escape periods as `\.`, and end patterns with `$` to avoid partial matches.
 
-4. Click **Next** to preview the data source contents. Verify expected folders appear before saving.
+4. Click **Preview and apply changes** to see the folders the source resolves to. Verify expected folders appear before saving.
 
-5. Click **Save**. The new data source will appear in the **Select a data source** dropdown.
+5. Click **Save**. The new data source will appear in the **Available Data Sources** list, and as an option when setting up a new analysis.
 
-> **Runs not showing up?** Double-check the Run Data Path and Import Patterns — a misconfiguration is the most common cause.
+> **Runs not showing up?** Double-check the Source Path and Import patterns — a misconfiguration is the most common cause.
 
 ---
 
@@ -73,21 +80,21 @@ Use this method to connect to a GridION device, another sequencing workstation, 
 
 > **Requirement:** SSH access on port 22 (enabled by default on GridION).
 
-1. Click **Settings** in the navigation bar.
+1. Open **System Configuration** → **Data Sources**.
 
-2. Under **Data Sources**, click **Create**.
+2. Under **Add new data source**, click **Create New**.
 
-3. Set **Endpoint Type** to `Remote (SFTP)` and fill in:
+3. Set **Type** to `Remote (SFTP)` and fill in:
 
    | Field | Description |
    |-------|-------------|
-   | **Endpoint Name** | Unique display name |
-   | **Host Name** | IP address or hostname of the remote computer |
-   | **User Name** | SSH username |
+   | **Name** | Unique display name |
+   | **Host name** | IP address or hostname of the remote computer |
+   | **Username** | SSH username |
    | **Password** | Password for the SSH user |
-   | **Run Data Path** | Full path to the run data folder on the remote machine |
-   | **Import Patterns** | Same as local — see above |
-   | **Exclude Folders** | Optional |
+   | **Source Path** | Full path to the run data folder on the remote machine |
+   | **Import patterns** | Same as local — see above |
+   | **Exclude folders** | Optional |
 
    > **Use a local system account** (not a personal or domain account) for the SSH credentials. This prevents access interruptions caused by password changes or account deactivation.
 
@@ -97,9 +104,9 @@ Use this method to connect to a GridION device, another sequencing workstation, 
    mklink /D C:\sftp\data D:\data
    ```
 
-   Then enter `/sftp/data` as the Run Data Path in the Software. The symlink resolves to `D:\data` transparently — no data is moved.
+   Then enter `/sftp/data` as the Source Path in the Software. The symlink resolves to `D:\data` transparently — no data is moved.
 
-4. Click **Next** to preview the top-level directories. Confirm expected folders are visible.
+4. Click **Preview and apply changes** to see the top-level directories. Confirm expected folders are visible.
 
 5. Click **Save**.
 
@@ -111,15 +118,16 @@ Use this when sequencing data has moved to a different path, or when SSH credent
 
 > **Credential changes:** If the account configured for a data source is disabled, sequencing runs at that endpoint will disappear from the import list. Update the data source with a working account to restore access.
 
-1. Click **Settings** → select the data source from the dropdown → click **Change**.
-2. Update the relevant fields using the same instructions above.
+1. Open **System Configuration** → **Data Sources**, then click the data source in the **Available Data Sources** list to open its details.
+2. Click the **pencil (edit)** icon, update the relevant fields using the same instructions above, then click **Preview and apply changes** → **Save**.
 
 ---
 
 ## Remove a Data Source
 
-1. Click **Settings** → select the data source from the dropdown → click **Remove**.
-2. Confirm by clicking **Remove** again in the confirmation dialog.
+1. Open **System Configuration** → **Data Sources**, then click the data source in the **Available Data Sources** list to open its details.
+2. Click the **trash (delete)** icon.
+3. In the **Remove data source?** confirmation, click **Remove**.
 
 ---
 
@@ -129,9 +137,8 @@ Remote access controls whether other computers on the network can connect to the
 
 > **Security note:** The Software does not include authentication or authorization controls. Secure remote access with a firewall or network access controls before enabling.
 
-1. Click **Settings** in the navigation bar.
-2. Under **System Configuration**, your current remote access status is shown.
-   - **Allow Remote Access** — enables access from other computers on the local network
-   - **Restrict Remote Access** — limits access to the local machine only
+1. Open **System Configuration** (gear icon in the Analysis Dashboard toolbar).
+2. Select **Remote Access** in the left-hand menu.
+3. Toggle **Allow connection from other computers** on to allow access from other computers on the local network, or off to limit access to the local machine only.
 
-The service restarts automatically when access settings change.
+Applying the change can take up to 5 minutes, during which the user interface may be unavailable. Refresh the page afterward to see the updated status.

@@ -8,9 +8,9 @@ When an analysis completes, the Software presents results in three progressively
 
 ## View Results
 
-1. From the **Analysis Dashboard**, click an analysis with status **Complete**.
+1. From the **Analysis Dashboard**, double-click an analysis with status **Complete**, or click its **⋯** menu and choose **Sample Summary**.
 
-2. Double-click the row (or click **Results**) to open the **Sample Summary** — a high-level view of key results per sample.
+2. This opens the **Sample Summary** — a high-level view of key results per sample.
 
 3. From Sample Summary, click a sample row and then **Genotype Summary** (or double-click the row) to see per-gene genotype results filtered to a single sample and barcode. Clear the filters to view all entries.
 

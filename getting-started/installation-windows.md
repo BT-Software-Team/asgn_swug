@@ -79,7 +79,7 @@ Download the installer from [myAsuragen](https://asuragen.com/myasuragen).
     http://localhost:9000
     ```
 
-    The **About** button will display the installed components if installation was successful.
+    If installation was successful, the **login page** will load.
 
 ---
 

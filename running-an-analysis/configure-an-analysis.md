@@ -6,7 +6,7 @@ Before an analysis can run, it needs a **panel configuration** (which variants t
 
 ## Assign a Panel Configuration and Sample Sheet
 
-1. From the **Analysis Dashboard**, double-click an analysis with status **New**, or select it and click **Load Analysis**.
+1. From the **Analysis Dashboard**, double-click an analysis with status **New**, or click its **⋯** menu and choose **Configure Analysis**.
 
 2. Review any **MinKNOW Warnings** displayed at the top of the page (see [MinKNOW Warnings](create-an-analysis.md#minknow-warnings)).
 

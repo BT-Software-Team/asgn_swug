@@ -25,6 +25,13 @@
 - [Review Results](analysis-results/review-results.md)
 - [Download Results](analysis-results/download-results.md)
 
+## Managing Your Team
+
+- [Add a User](managing-your-team/add-a-user.md)
+- [Manage a User](managing-your-team/manage-a-user.md)
+- [Reset a Password](managing-your-team/reset-a-password.md)
+- [Roles & Permissions](managing-your-team/roles-and-permissions.md)
+
 ## Troubleshooting
 
 - [Common Errors](troubleshooting/common-errors.md)
@@ -35,3 +42,7 @@
 - [Results Description](reference/results-description.md)
 - [Data Storage & Archival](reference/data-storage.md)
 - [Third-Party Licenses](reference/licenses.md)
+
+## Release Notes
+
+- [Release v2.0](release-notes/v2.0.md)

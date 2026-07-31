@@ -43,9 +43,10 @@ Regardless of filter settings, the following variant types are **always** Analyz
 
 ## Review the Default Panel Filter
 
-1. Click **Settings** in the navigation bar.
-2. Select `default_filter.json` from the **Panel Filter Configurations** dropdown.
-3. Use the **GENE FILTER**, **CLINVAR**, and **VARIANT EFFECT** tabs to review the defaults:
+1. From the **Analysis Dashboard**, click the **gear icon** in the table toolbar to open **System Configuration**.
+2. Select **Panel Filters** in the left-hand menu.
+3. Under **Default Filter**, click `default_filter.json`.
+4. Use the **GENE FILTER**, **CLINVAR**, and **VARIANT EFFECT** tabs to review the defaults:
    - **GENE FILTER:** All Mixes and all genes are selected for both Analyze and Summarize.
    - **CLINVAR:** All categories are Analyzed; only Pathogenic and Likely Pathogenic are Summarized.
    - **VARIANT EFFECT:** All consequences are Analyzed; only `nonsense` is Summarized.
@@ -55,8 +56,9 @@ Regardless of filter settings, the following variant types are **always** Analyz
 
 ## Create a New Panel Filter Configuration
 
-1. Click **Settings** in the navigation bar.
-2. Select **Create a new panel configuration** from the dropdown.
+1. From the **Analysis Dashboard**, click the **gear icon** in the table toolbar to open **System Configuration**.
+2. Select **Panel Filters** in the left-hand menu.
+3. Under **Add new panel filter**, click **Create New**.
 
 ### GENE FILTER tab (required)
 
