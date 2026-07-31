@@ -6,6 +6,7 @@
 - [System Requirements](getting-started/system-requirements.md)
 - [Installation on Ubuntu Linux](getting-started/installation-linux.md)
 - [Installation on Windows 11](getting-started/installation-windows.md)
+- [Quick Start](getting-started/quick-start.md)
 
 ## Configuration
 
@@ -27,6 +28,7 @@
 ## Troubleshooting
 
 - [Common Errors](troubleshooting/common-errors.md)
+- [Contact Support](troubleshooting/contact-support.md)
 
 ## Reference
 
