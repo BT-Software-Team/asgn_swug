@@ -6,6 +6,7 @@
 - [System Requirements](getting-started/system-requirements.md)
 - [Installation on Ubuntu Linux](getting-started/installation-linux.md)
 - [Installation on Windows 11](getting-started/installation-windows.md)
+- [Signing In](getting-started/signing-in.md)
 - [Quick Start](getting-started/quick-start.md)
 
 ## Configuration

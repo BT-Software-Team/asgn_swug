@@ -2,7 +2,7 @@
 
 This walkthrough takes you from a freshly installed Software to your first set of results in about five minutes of hands-on time (analysis run time varies). It uses the default data source and default panel filter, so there's nothing to configure first.
 
-> **Before you begin:** The Software must be [installed](installation-linux.md) and open in your browser at `http://localhost:9000`, and you need a **completed** sequencing run in the default MinKNOW data location. A default data source pointing there is created for you during installation.
+> **Before you begin:** The Software must be [installed](installation-linux.md), and you must be [signed in](signing-in.md) at `http://localhost:9000`. You also need a **completed** sequencing run in the default MinKNOW data location — a default data source pointing there is created for you during installation.
 
 ## 1. Create the analysis
 

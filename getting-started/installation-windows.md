@@ -79,7 +79,7 @@ Download the installer from [myAsuragen](https://asuragen.com/myasuragen).
     http://localhost:9000
     ```
 
-    If installation was successful, the **login page** will load.
+    If installation was successful, the **login page** will load. See [Signing In](signing-in.md) for what to expect.
 
 ---
 
