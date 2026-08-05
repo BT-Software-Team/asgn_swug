@@ -41,16 +41,58 @@ Regardless of filter settings, the following variant types are **always** Analyz
 
 ---
 
-## Review the Default Panel Filter
+## Open Panel Filters
 
 1. From the **Analysis Dashboard**, click the **gear icon** in the table toolbar to open **System Configuration**.
 2. Select **Panel Filters** in the left-hand menu.
-3. Under **Default Filter**, click `default_filter.json`.
-4. Use the **GENE FILTER**, **CLINVAR**, and **VARIANT EFFECT** tabs to review the defaults:
-   - **GENE FILTER:** All Mixes and all genes are selected for both Analyze and Summarize.
-   - **CLINVAR:** All categories are Analyzed; only Pathogenic and Likely Pathogenic are Summarized.
-   - **VARIANT EFFECT:** All consequences are Analyzed; only `nonsense` is Summarized.
-   - **VARIANT LISTS:** No inclusion or exclusion lists are defined by default.
+
+The Panel Filters screen lists:
+
+| Section | Contents |
+|---------|----------|
+| **Add new panel filter** | The **Create New** button. |
+| **Default Filter** | The filter that ships with the Software. It can be viewed but not changed. |
+| **Custom Panel Filters** | Every configuration you have created. |
+
+Click any filter in either list to open it.
+
+---
+
+## View a Panel Filter
+
+Clicking a filter opens a **read-only summary** of that configuration — a single scrollable page, not the editing form. The filter name appears in the breadcrumb at the top (**Panel Filters / your-filter-name**); the back arrow beside it returns to the list.
+
+The summary is organized into these sections:
+
+| Section | What it shows |
+|---------|--------------|
+| **Configuration Details** | The filter's **Name**. |
+| **Gene Targets** | Four counts across the top — **Kits selected**, **Genes analyzed**, **Summaries on**, **Genes excluded** — followed by one card per selected Mix listing its genes. |
+| **ClinVar Classifications** | The classifications included in analysis. Shows *No ClinVar Classifications Selected* if none are set. |
+| **Variant Effect** | The VEP consequences included in analysis. Shows *No Variant Effects Selected* if none are set. |
+| **Variant Lists** | The exclusion and inclusion lists, listed separately for **Analysis** and for **Summaries**. |
+
+**Reading the gene cards.** Each Mix card is headed by the Mix name and a count — `9 genes` when every gene is on, or `3 of 9 genes` when some are off. Within the card, each gene shows:
+
+| Indicator | Meaning |
+|-----------|---------|
+| Blue check + full-strength text | The gene is **analyzed** — its variants appear in variant-level results. |
+| Grey dash + dimmed text | The gene is **not analyzed** — it is excluded from this filter entirely. |
+| **Summary on** (blue, at right) | The gene is also **summarized** — it appears in gene-level and sample-level results. |
+| **Summary off** (grey, at right) | The gene is analyzed but not summarized. |
+
+**Reading the counts.** *Kits selected* is how many Mixes the filter covers. *Genes analyzed* and *Summaries on* count genes within those selected Mixes. *Genes excluded* counts every gene across **all** kits that this filter does not analyze — so genes belonging to a Mix you did not select are counted as excluded.
+
+To change anything on this page, click the **edit (pencil) icon** in the upper-right corner. The page becomes the editing form described below.
+
+> The **Default Filter** opens in this same summary view, and its Mix and gene selections cannot be edited. To work from the defaults, create a new filter instead — a new configuration starts out pre-filled with the default filter's settings.
+
+**Default filter settings:**
+
+- **Gene Targets:** All Mixes and all genes are selected for both Analyze and Summarize.
+- **ClinVar:** All categories are Analyzed; only Pathogenic and Likely Pathogenic are Summarized.
+- **Variant Effect:** All consequences are Analyzed; only `nonsense` is Summarized.
+- **Variant Lists:** No inclusion or exclusion lists are defined by default.
 
 ---
 
@@ -59,6 +101,12 @@ Regardless of filter settings, the following variant types are **always** Analyz
 1. From the **Analysis Dashboard**, click the **gear icon** in the table toolbar to open **System Configuration**.
 2. Select **Panel Filters** in the left-hand menu.
 3. Under **Add new panel filter**, click **Create New**.
+4. Enter a name in **Panel Filter Title**. Names may contain letters, numbers, periods, dashes, and underscores only.
+5. Work through the tabs below, then click **Save Filters**.
+
+> A new configuration opens pre-filled with the default filter's settings, so you only need to change what differs from the defaults.
+>
+> **Cancel** discards the configuration. Because unsaved work is lost, you are asked to confirm first.
 
 ### GENE FILTER tab (required)
 
@@ -81,11 +129,17 @@ Each kit targets its own set of genes, so selecting a Mix here determines which 
 
 The Mixes included in a given run are recorded with the analysis and shown in your results — see the `Mixes` field in [Configure an Analysis](../running-an-analysis/configure-an-analysis.md).
 
+> The interface uses both terms: the selectable chips are labeled **Mix A**–**Mix D**, while the summary view counts them as **Kits selected**. They refer to the same thing.
+
 #### Set the filters
 
-1. Choose one or more Mixes from the left pane to filter Mix-specific genes in the right pane.
-2. Toggle **Analyze** for each gene target to include in variant-level results.
-3. Toggle **Summarize** for each gene to include in summary results.
+This tab is headed **Gene Target Configuration**.
+
+1. Click the **Mix chips** at the top to select the Mixes this filter covers. A selected chip is filled in; click it again to deselect. Until at least one is selected, the tab shows *Select a kit above to configure gene targets*.
+2. The **Included in analysis** panel below lists the genes for each selected Mix, with a running count in its header (`4 of 9 genes · 2 summaries on`).
+3. For each gene, use its checkbox to include it in **analysis** — its variants appear in variant-level results.
+4. For each analyzed gene, use its **Summary** toggle to also include it in **summary** results at the gene and sample level. A gene that is not analyzed cannot be summarized.
+5. Use **Toggle all summaries** in the panel header to turn every summary on at once, and **Deselect all summaries** to turn them all off.
 
 ### CLINVAR tab (optional)
 
@@ -148,3 +202,14 @@ HBB:c.316-185C>T,GBA1:c.1226A>G
 HBB:c.316-185C>T, GBA1:c.1226A>G
 HBB:c.316-185C>T
 ```
+
+---
+
+## Edit an Existing Panel Filter
+
+1. Open **System Configuration** → **Panel Filters**, then click the filter under **Custom Panel Filters** to open its summary.
+2. Click the **edit (pencil) icon** in the upper-right corner.
+3. Change settings using the same tabs described above.
+4. Click **Save Filters**. The button appears once you have made a change; if nothing has changed, there is nothing to save.
+
+To leave without saving, click **Cancel** and confirm when asked. The Default Filter cannot be edited — create a new configuration instead.
