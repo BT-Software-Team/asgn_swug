@@ -11,6 +11,15 @@ A default data source is created during installation pointing to where MinKNOW s
 
 Additional data sources can be added for networked devices (e.g., a GridION, another sequencing workstation, or a remote fileserver) using SSH on port 22. All configured data sources appear as options when setting up a new analysis.
 
+Every data source is one of two types:
+
+| Type | What it means | Use it when |
+|------|---------------|-------------|
+| **Local Computer** | The run data sits on a drive that the computer running the Software can reach directly — an internal disk, an attached USB or external drive, or a network share already mounted by the operating system. No credentials are needed; the Software reads the path as-is. | The files are on this machine, or on storage this machine already has mounted. |
+| **Remote (SFTP)** | The run data sits on a *different* computer, and the Software reaches it over the network via SSH/SFTP on port 22. Requires a host name, SSH username, and password. | The files are on a GridION, another sequencing workstation, or a fileserver that is not mounted locally. |
+
+If you can open the folder in the file browser on the computer running the Software, it is a **local** data source. If you would have to log in to another machine to see the folder, it is a **remote** data source.
+
 After a dataset is imported, it is copied to a managed location:
 
 | OS | Imported dataset path |
@@ -28,6 +37,8 @@ Data source setup lives in **System Configuration**, not the account **Settings*
 2. In the left-hand menu, select **Data Sources**.
 
 ## Add a Local Data Source
+
+Use this method when the run data is on a disk the computer running the Software can already reach — an internal drive, an attached external drive, or an OS-mounted network share.
 
 1. Open **System Configuration** → **Data Sources**.
 
@@ -76,7 +87,7 @@ Data source setup lives in **System Configuration**, not the account **Settings*
 
 ## Add a Remote Data Source (SSH/SFTP) {#add-a-remote-data-source}
 
-Use this method to connect to a GridION device, another sequencing workstation, or a network file server.
+Use this method when the run data is on a different computer that the Software must log in to over the network — a GridION device, another sequencing workstation, or a network file server.
 
 > **Requirement:** SSH access on port 22 (enabled by default on GridION).
 
