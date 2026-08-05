@@ -11,6 +11,7 @@
 
 ## Configuration
 
+- [Configuration Overview](configuration/README.md)
 - [Configure Data Sources](configuration/data-sources.md)
 - [Panel Filter Configurations](configuration/panel-filters.md)
 

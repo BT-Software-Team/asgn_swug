@@ -36,6 +36,8 @@ Data source setup lives in **System Configuration**, not the account **Settings*
 1. From the **Analysis Dashboard**, click the **gear icon** in the table toolbar.
 2. In the left-hand menu, select **Data Sources**.
 
+For everything else System Configuration covers, see [Configuration Overview](README.md).
+
 ## Add a Local Data Source
 
 Use this method when the run data is on a disk the computer running the Software can already reach — an internal drive, an attached external drive, or an OS-mounted network share.
