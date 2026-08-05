@@ -56,10 +56,30 @@ Use this method when the run data is on a disk the computer running the Software
 
    **Converting Windows paths to Linux-style:**
 
+   On Windows, the Software stores paths in Linux style, so a path copied from File Explorer has to be rewritten before you paste it into **Source Path**. There are three changes.
+
+   Start with the path as Windows shows it — for example `C:\Archive\Nanopore\runs`.
+
+   | Step | What to do | Result |
+   |------|-----------|--------|
+   | 1 | Replace the drive letter and colon (`C:`) with `/mnt/` followed by that letter in **lowercase** (`/mnt/c`). A `D:` drive becomes `/mnt/d`, an `E:` drive becomes `/mnt/e`, and so on. | `/mnt/c\Archive\Nanopore\runs` |
+   | 2 | Turn every backslash `\` into a forward slash `/`. | `/mnt/c/Archive/Nanopore/runs` |
+   | 3 | Type the folder names in lowercase. | `/mnt/c/archive/nanopore/runs` |
+
+   The finished path always starts with `/mnt/`, uses only forward slashes, and has no drive letter followed by a colon.
+
+   More examples:
+
    | Windows path | Linux-style equivalent |
    |-------------|----------------------|
    | `C:\Archive\Nanopore\runs` | `/mnt/c/archive/nanopore/runs` |
    | `D:\data` | `/mnt/d/data` |
+   | `C:\Users\labuser\Documents\runs` | `/mnt/c/users/labuser/documents/runs` |
+   | `E:\ONT Runs\2026` | `/mnt/e/ont runs/2026` |
+
+   **To find the path for a folder:** open it in File Explorer, click once in the address bar at the top of the window (the text turns into an editable path such as `C:\Archive\Nanopore\runs`), press **Ctrl+C** to copy it, then apply the three steps above.
+
+   > Spaces in folder names are fine — keep them, and do not add quotation marks.
 
    **Default import patterns:**
 
