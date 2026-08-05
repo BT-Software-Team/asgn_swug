@@ -153,19 +153,55 @@ Use this method when the run data is on a different computer that the Software m
    | **Import patterns** | Same as local — see above |
    | **Exclude folders** | Optional |
 
-   > **Use a local system account** (not a personal or domain account) for the SSH credentials. This prevents access interruptions caused by password changes or account deactivation.
-
-   **Run data on a non-C drive (Windows remote)?** Create a symlink on the remote machine first:
-
-   ```cmd
-   mklink /D C:\sftp\data D:\data
-   ```
-
-   Then enter `/sftp/data` as the Source Path in the Software. The symlink resolves to `D:\data` transparently — no data is moved.
+   > See [Choosing an Account for SSH Credentials](#ssh-account) and [Run Data on a Non-C Drive](#non-c-drive) below before filling in the **Username**, **Password**, and **Source Path** fields.
 
 4. Click **Preview and apply changes** to see the top-level directories. Confirm expected folders are visible.
 
 5. Click **Save**.
+
+### Choosing an Account for SSH Credentials {#ssh-account}
+
+Use a **local system account** on the remote machine — an account created on that machine specifically for this connection. Do not use a personal account or a domain (network) account.
+
+The Software stores the username and password you enter and reuses them every time it connects. If those credentials stop working, the data source stops working with them: sequencing runs at that endpoint disappear from the import list until the data source is updated with an account that works.
+
+Personal and domain accounts change in ways that are outside your control:
+
+| Account type | What can break the connection |
+|--------------|------------------------------|
+| Personal account | The owner changes their password, enables multi-factor authentication, or leaves and has the account disabled. |
+| Domain / network account | IT enforces a scheduled password expiration, a security policy change, or the account is deprovisioned. |
+| **Local system account** | Nothing routine — it exists only for this purpose and its password changes only when you change it. |
+
+If you do change the account's password later, update the data source to match. See [Modify a Data Source](#modify-a-data-source).
+
+### Run Data on a Non-C Drive (Windows Remote) {#non-c-drive}
+
+When the Software connects to a Windows machine over SFTP, it addresses paths beneath the `C:` drive. If the run data lives on another drive — `D:`, `E:`, an attached external drive — the path will not resolve, and the preview step reports that it cannot locate the Run Data Path.
+
+The fix is a **symlink**: a small pointer placed under `C:` that redirects to the real folder on the other drive. It takes a moment to create, moves no data, and uses no additional disk space.
+
+On the **remote machine** (the one holding the run data), open Command Prompt **as Administrator** and run:
+
+```cmd
+mklink /D C:\sftp\data D:\data
+```
+
+| Part of the command | What it is |
+|---------------------|-----------|
+| `mklink /D` | The Windows command that creates a directory symlink. |
+| `C:\sftp\data` | The pointer being created. This is the path that must not already exist — Windows creates it. |
+| `D:\data` | The real folder holding the run data. Replace this with your actual path. |
+
+Then, back in the Software, enter the **pointer** path in Linux style as the **Source Path**:
+
+```
+/sftp/data
+```
+
+The symlink resolves to `D:\data` transparently — the Software sees the run data as though it were under `C:`, and no files are copied or moved.
+
+> If `mklink` reports "Cannot create a file when that file already exists," the pointer path is already in use. Either delete the existing link or choose a different pointer path (for example `C:\sftp\runs`) and use that in the Source Path.
 
 ---
 
