@@ -81,12 +81,36 @@ Use this method when the run data is on a disk the computer running the Software
 
    > Spaces in folder names are fine — keep them, and do not add quotation marks.
 
+   **What import patterns do:**
+
+   A sequencing run folder contains far more files than the Software needs — basecalling logs, temporary files, summary spreadsheets, files for reads that failed quality filtering. Import patterns tell the Software which of those files to pick up and which to leave behind.
+
+   Each pattern is a **regular expression** (RegEx) — a short piece of text that describes a shape of file path rather than one specific path. When you import a dataset, the Software looks at every file in the run folder and keeps the ones whose path matches at least one of your patterns. A file that matches none of them is ignored.
+
+   You do not need to write these yourself. The two defaults below cover a standard MinKNOW run, and most users never change them.
+
    **Default import patterns:**
 
-   ```
-   .*fastq_pass/.*\.gz$           # Compressed FASTQ files inside fastq_pass/
-   .*report_.*\.(html|json)$      # MinKNOW report files
-   ```
+   | Pattern | What it collects |
+   |---------|-----------------|
+   | `.*fastq_pass/.*\.gz$` | The compressed FASTQ read files inside the run's `fastq_pass` folder — the sequencing data the analysis runs on. Reads that failed MinKNOW's quality filter land in `fastq_fail` instead, which this pattern deliberately skips. |
+   | `.*report_.*\.(html\|json)$` | The MinKNOW run reports — files whose names start with `report_` and end in `.html` or `.json`. These supply the run metadata shown alongside your results. |
+
+   **Reading the first pattern piece by piece:**
+
+   | Piece | Meaning |
+   |-------|---------|
+   | `.*` | Any number of any characters — here, whatever folders sit between the top of the data source and the `fastq_pass` folder. This is what lets one pattern match every run, no matter how the folders above it are named. |
+   | `fastq_pass/` | The literal folder name `fastq_pass`, followed by a slash. The file must be inside a folder with this exact name. |
+   | `.*` | Again, anything — the file name itself, plus any sub-folders (such as per-barcode folders) beneath `fastq_pass`. |
+   | `\.gz` | A literal period followed by `gz`. The backslash is there because a bare `.` means "any character" in RegEx, so `\.` is how you say "an actual dot." |
+   | `$` | End of the path. This forces the match to be at the very end of the file name, so `reads.gz` matches but `reads.gz.tmp` does not. |
+
+   So `.*fastq_pass/.*\.gz$` reads as: *any file ending in `.gz`, anywhere inside a folder called `fastq_pass`.*
+
+   The second pattern uses one extra piece, `(html|json)`, where the vertical bar means "either one." `report_.*\.(html|json)$` matches a file whose name begins with `report_` and ends in either `.html` or `.json`.
+
+   **When you would change them:** only if your instrument or pipeline writes run files somewhere other than the standard MinKNOW layout — for example, if basecalling output was moved to a custom folder, or the reads are not in a `fastq_pass` folder. If you preview a data source and the expected runs do not appear, the Source Path is the more likely cause; check that first.
 
    To create a custom import pattern, identify the actual file path in a completed run and translate it to a RegEx. For example:
 
@@ -96,6 +120,8 @@ Use this method when the run data is on a disk the computer running the Software
    ```
 
    Use `.*` for variable path segments, escape periods as `\.`, and end patterns with `$` to avoid partial matches.
+
+   > Enter one pattern per row, and enter the pattern only — the `#` text above is explanation, not part of the pattern.
 
 4. Click **Preview and apply changes** to see the folders the source resolves to. Verify expected folders appear before saving.
 
