@@ -62,6 +62,27 @@ Regardless of filter settings, the following variant types are **always** Analyz
 
 ### GENE FILTER tab (required)
 
+#### What a Mix is
+
+The left pane of this tab lists **Mix A**, **Mix B**, **Mix C**, and **Mix D**. A Mix corresponds directly to the AmplideX Nanopore Carrier Plus kit used to prepare the library — the kit you ordered and ran at the bench determines which Mix your data belongs to:
+
+| Kit | Reference | Appears here as |
+|-----|-----------|-----------------|
+| AmplideX Nanopore Carrier Plus Kit A | A00627 | **Mix A** |
+| AmplideX Nanopore Carrier Plus Kit B | A00628 | **Mix B** |
+| AmplideX Nanopore Carrier Plus Kit C | A00629 | **Mix C** |
+| AmplideX Nanopore Carrier Plus Kit D | A00630 | **Mix D** |
+
+Each kit targets its own set of genes, so selecting a Mix here determines which gene targets appear in the right pane. Selecting Mix A shows the genes covered by Kit A, and so on.
+
+**Which Mixes should you select?** The ones matching the kits you used. If your runs are prepared with Kit A and Kit D, select Mix A and Mix D. Leaving all four selected — as the default filter does — is also fine: a Mix you did not run simply contributes no results.
+
+> A gene covered by more than one kit appears under each of those Mixes, and the two entries are configured independently. For example, SMN1 and SMN2 appear under both Mix A and Mix D, and what each kit reports for them differs — see [Which Variants Appear in Sample Summary (by Gene)](../reference/results-description.md#which-variants-appear-in-sample-summary-by-gene) for the specifics.
+
+The Mixes included in a given run are recorded with the analysis and shown in your results — see the `Mixes` field in [Configure an Analysis](../running-an-analysis/configure-an-analysis.md).
+
+#### Set the filters
+
 1. Choose one or more Mixes from the left pane to filter Mix-specific genes in the right pane.
 2. Toggle **Analyze** for each gene target to include in variant-level results.
 3. Toggle **Summarize** for each gene to include in summary results.
