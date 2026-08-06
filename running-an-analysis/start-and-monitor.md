@@ -8,26 +8,24 @@ After you click **Start Analysis**, the analysis is queued and runs on the Softw
 
 Navigate to the **Analysis Dashboard** and check the **Status** column. Refresh the page to see updates.
 
-Every row has an **⋯ (overflow) menu** at its right-hand end. Which actions it offers depends on that row's status — the **What you can do** column below lists exactly what appears.
-
-| Status | Meaning | What you can do |
-|--------|---------|-----------------|
-| **Import Initializing** | Dataset is being transferred from the source endpoint | Wait. **⋯ → Delete** is available if you want to abandon the import. |
-| **Import Error** | Dataset did not import correctly | Verify `fastq.gz` files exist in `fastq_pass/barcodeXX` directories, then **⋯ → Delete** and create the analysis again. |
-| **New** | Analysis created, data imported, ready to configure | **⋯ → Configure Analysis** (or double-click the row) to assign a panel filter and sample sheet, then click **Start Analysis**. **⋯ → Delete** removes it. |
-| **In Queue** | Waiting for a previous analysis to complete | Wait — analyses run one at a time, in order. **⋯ → Cancel** if you no longer need it. |
-| **Running** | Analysis is actively processing | Wait. **⋯ → Cancel** stops it. |
-| **X processed of Y** | Analysis is progressing | Wait — the Y value increases as tasks are discovered. **⋯ → Cancel** stops it. |
-| **Error** | Analysis did not complete or was cancelled | See [Troubleshooting](../troubleshooting/common-errors.md). **⋯ → Configure Analysis** to correct the configuration and run it again, or **⋯ → Delete**. |
-| **Complete** | Analysis finished successfully | **⋯ → Sample Summary** to review results, **⋯ → View Files** to download them, or **⋯ → Delete**. |
+| Status | Meaning |
+|--------|---------|
+| **Import Initializing** | Dataset is being transferred from the source endpoint |
+| **Import Error** | Dataset did not import correctly. Verify `fastq.gz` files exist in `fastq_pass/barcodeXX` directories. |
+| **New** | Analysis created, data imported, ready to configure |
+| **In Queue** | Waiting for a previous analysis to complete — analyses run one at a time, in order |
+| **Running** | Analysis is actively processing |
+| **X processed of Y** | Analysis is progressing. The Y value increases as tasks are discovered. |
+| **Error** | Analysis did not complete or was cancelled. See [Troubleshooting](../troubleshooting/common-errors.md). |
+| **Complete** | Analysis finished successfully |
 
 > **Analysis time** varies by number of samples, read depth, and available compute resources.
 
-> **Cancel and Delete are never offered together.** A queued or running analysis can only be cancelled; once it has stopped, it can be deleted.
+For what you can do to an analysis at each status, see [Row Actions](#row-actions) below.
 
-## Row Actions
+## Row Actions {#row-actions}
 
-Click the **⋯** at the right-hand end of any row for the actions available to that analysis. The button is greyed out when the status offers no actions at all.
+Every row has an **⋯ (overflow) menu** at its right-hand end. Click it for the actions available to that analysis; the button is greyed out when the status offers no actions at all.
 
 | Status | Actions in the ⋯ menu |
 |--------|-----------------------|
