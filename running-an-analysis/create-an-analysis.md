@@ -1,26 +1,41 @@
 # Create an Analysis
 
-An **analysis** pairs a sequencing dataset with the Software's pipeline so it can call and report variants. Creating one names the analysis and imports the run data you want to process — you'll assign a panel configuration and sample sheet in the next step.
+An **analysis** pairs a sequencing dataset with the Software's pipeline so it can call and report variants. Creating one names the analysis, picks the pipeline, and selects the run data to process — you'll assign a panel configuration and sample sheet in the next step.
 
 > **Before you begin:** Make sure the sequencing run has **fully completed**. Importing a run that is still in progress may result in missing FASTQ files, insufficient read depth, missing samples, QC flags, or analysis failures.
 
 ## Create the Analysis
 
-1. From the **Analysis Dashboard**, click **New Analysis**.
+1. From the **Analysis Dashboard**, click the **+ (plus) icon** in the table toolbar. The **Create Analysis** dialog opens.
 
-2. Enter a name in the **Analysis Id** field. The current pipeline version is shown.
+   > If the plus icon is greyed out, hovering it shows **No pipelines available** — the Software has not loaded a pipeline to run against. Contact support if this persists.
 
-   > **Naming rules:** Only letters, numbers, dashes (`-`), and underscores (`_`) are accepted. Spaces and special characters are not allowed.
+2. Enter a name in the **Analysis Id** field.
 
-3. In **Select Dataset**, choose an already-imported dataset or select **Import Dataset…** to bring in a new one.
+   > **Naming rules:** Only letters, numbers, dashes (`-`), and underscores (`_`) are accepted. Spaces and special characters are not allowed. The name must also be unique — reusing the name of an existing analysis reports *This Analysis name already exists in your table.*
 
-4. If importing a new dataset, a table of available datasets from all configured endpoints appears (see [Configure Data Sources](../configuration/data-sources.md)). Use the **Filters** and **Columns** buttons to locate a specific dataset.
+3. Under **Pipelines**, select the pipeline to run. Each available pipeline and version is listed as its own option; the first is selected for you, so you can leave this as-is if only one is available.
 
-   If you previously imported a dataset and have since added FASTQ files to that directory, re-importing will prompt you to overwrite the existing dataset. This will not affect any completed analyses.
+4. In the **Dataset** dropdown, choose an already-imported dataset, or choose **Import Dataset...** to bring in a new one.
+
+5. If you chose **Import Dataset...**, a table of datasets found across all configured data sources appears below (see [Configure Data Sources](../configuration/data-sources.md)). It has two columns:
+
+   | Column | Contents |
+   |--------|----------|
+   | **Endpoint** | The data source the dataset was found on. |
+   | **Name** | The run folder name. |
+
+   Click a row to select that dataset. Use the toolbar above the table to search, filter, or change which columns are shown, and the pager beneath it to move through longer lists.
+
+   If you select a dataset that has already been imported, a warning appears: *This dataset already exists and will be re-imported.* Continuing replaces the current contents of the stored dataset — useful when FASTQ files were added to the run folder after the first import. Completed analyses that used the earlier import are unaffected. You are asked to confirm in a **Re-Import Dataset** dialog before anything is replaced.
 
    > **Dataset not visible?** See [Missing Datasets](../troubleshooting/common-errors.md#missing-datasets) in Troubleshooting.
 
-5. Click **Create** to confirm. A MinKNOW warning about a missing `report.json` file does not prevent you from proceeding — see [MinKNOW Warnings](#minknow-warnings) for context.
+6. Click **Create Analysis**. The button stays disabled until both an Analysis Id and a dataset are provided.
+
+   To close without creating anything, click **Cancel**.
+
+The new analysis appears in the Analysis Dashboard, ready to be configured.
 
 ## What's next
 
@@ -30,6 +45,6 @@ An **analysis** pairs a sequencing dataset with the Software's pipeline so it ca
 
 ## MinKNOW Warnings {#minknow-warnings}
 
-A warning in this section means that the run data may not be fully compatible with the selected analysis pipeline. Common causes include an unsupported MinKNOW version, basecaller model mismatch, barcode trimming settings, or an unvalidated barcode kit.
+A MinKNOW warning means the run data may not be fully compatible with the selected analysis pipeline. Common causes include an unsupported MinKNOW version, basecaller model mismatch, barcode trimming settings, an unvalidated barcode kit, or a missing `report.json` file.
 
 Warnings do not block analysis, but should be reviewed before proceeding. If the warning relates to a basecaller model or incompatible MinKNOW version, see [Post-run Basecalling](post-run-basecalling.md).
