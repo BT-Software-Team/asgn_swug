@@ -1,5 +1,7 @@
 # Data Storage & Archival
 
+> For every default path on Linux and Windows in one place, see [Default File Locations](../README.md#default-file-locations) in the Overview.
+
 ---
 
 ## Storage Requirements
