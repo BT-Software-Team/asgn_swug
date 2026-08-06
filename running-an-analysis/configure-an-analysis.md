@@ -37,7 +37,27 @@ The selection is applied as soon as you make it — there is no separate apply o
 
 ## Assign a Sample Sheet {#assign-a-sample-sheet}
 
-The sample sheet tells the analysis which samples and barcodes to expect. It must meet the [Sample Sheet Requirements](#sample-sheet-requirements) below.
+The sample sheet tells the analysis which samples and barcodes to expect.
+
+### Sample sheet requirements {#sample-sheet-requirements}
+
+The sample sheet must be a tab-delimited `.txt` file with the following required headers (case-sensitive):
+
+| Column | Description |
+|--------|-------------|
+| `SourceID` | Sample name. Displayed as **Sample ID** in the sample sheet table. |
+| `BarcodeID` | Barcode in format `BCXX` (e.g., `BC01`) |
+| `Mixes` | Letters for each Mix included (e.g., `abc` for Mix A, B, and C) |
+| `Calibrators` | `n` for non-calibrators; `a`, `c`, or `ac` for calibrators |
+
+Additional rules:
+
+- Values may only contain letters, numbers, `-`, and `_`. Spaces and other whitespace are not accepted.
+- Each `SourceID` + `BarcodeID` combination must be unique.
+- For each `BarcodeID`, a matching `barcodeXX` folder must exist in the imported dataset directory.
+- If Mix A or C is used, at least one calibrator sample must be designated for those mixes.
+
+> **Default User Data Path is a hidden folder.** To view it in File Explorer on Windows, enable hidden files in View settings. Default path: `C:\ProgramData\asuragen\`
 
 ### Upload the file
 
@@ -54,7 +74,7 @@ A table of the sample sheet's contents appears below the file card.
 |--------------|---------------|
 | A **warning banner** above the table | The run data may not be fully compatible with the pipeline. See [MinKNOW Warnings](create-an-analysis.md#minknow-warnings). This does not block the analysis. |
 | A red error message above the file card | The file could not be processed at all — no table is shown. Correct the file and upload it again. |
-| Text in the **Errors** column | That row failed validation. Check it against [Sample Sheet Requirements](#sample-sheet-requirements) below. |
+| Text in the **Errors** column | That row failed validation. Check it against the [requirements](#sample-sheet-requirements) above. |
 | `N/A` in the **Errors** column | That row is valid. |
 
 ### Correct a row
@@ -76,26 +96,6 @@ The button stays disabled until all three conditions are met: a panel filter is 
 > If a red banner reads *No pipelines were found. Starting an analysis is disabled until pipelines are available*, the Software has no pipeline to run against and the analysis cannot be started. Contact support if this persists.
 
 ---
-
-## Sample Sheet Requirements {#sample-sheet-requirements}
-
-The sample sheet must be a tab-delimited `.txt` file with the following required headers (case-sensitive):
-
-| Column | Description |
-|--------|-------------|
-| `SourceID` | Sample name. Displayed as **Sample ID** in the sample sheet table. |
-| `BarcodeID` | Barcode in format `BCXX` (e.g., `BC01`) |
-| `Mixes` | Letters for each Mix included (e.g., `abc` for Mix A, B, and C) |
-| `Calibrators` | `n` for non-calibrators; `a`, `c`, or `ac` for calibrators |
-
-Additional rules:
-
-- Values may only contain letters, numbers, `-`, and `_`. Spaces and other whitespace are not accepted.
-- Each `SourceID` + `BarcodeID` combination must be unique.
-- For each `BarcodeID`, a matching `barcodeXX` folder must exist in the imported dataset directory.
-- If Mix A or C is used, at least one calibrator sample must be designated for those mixes.
-
-> **Default User Data Path is a hidden folder.** To view it in File Explorer on Windows, enable hidden files in View settings. Default path: `C:\ProgramData\asuragen\`
 
 ## What's next
 
