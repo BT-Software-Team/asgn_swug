@@ -68,16 +68,13 @@ Once uploaded, the file appears as a card showing its name and size. To replace 
 
 ### Review the results
 
-A table of the sample sheet's contents appears below the file card.
+A table of the sample sheet's contents appears below the file card. Check the **Errors** column: rows that passed validation show `N/A`, and any other text means that row failed.
 
-| What you see | What it means |
-|--------------|---------------|
-| `N/A` in the **Errors** column | That row is valid. |
-| Text in the **Errors** column | That row failed validation. |
-| A red message above the file card, no table | The whole file was rejected — usually a header or file-format problem. |
-| A **warning banner** above the table | The run data may not be fully compatible with the pipeline. This does **not** block the analysis — see [MinKNOW Warnings](#minknow-warnings) below. |
+If no table appears at all and a red message shows above the file card, the whole file was rejected rather than individual rows.
 
 > **Got an error?** See [Sample Sheet Errors](../troubleshooting/sample-sheet-errors.md) for every message, what causes it, and how to fix it.
+>
+> A **yellow warning banner** above the table is not an error and does not block the analysis — see [MinKNOW Warnings](#minknow-warnings) below.
 
 ### Correct a row
 
