@@ -41,6 +41,7 @@
 
 - [Common Errors](troubleshooting/common-errors.md)
 - [Sample Sheet Errors](troubleshooting/sample-sheet-errors.md)
+- [Data Source Errors](troubleshooting/data-source-errors.md)
 - [Contact Support](troubleshooting/contact-support.md)
 
 ## Reference

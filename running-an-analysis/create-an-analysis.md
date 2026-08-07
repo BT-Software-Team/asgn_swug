@@ -40,11 +40,3 @@ The new analysis appears in the Analysis Dashboard, ready to be configured.
 ## What's next
 
 - [Configure an Analysis](configure-an-analysis.md) — assign a panel configuration and sample sheet.
-
----
-
-## MinKNOW Warnings {#minknow-warnings}
-
-A MinKNOW warning means the run data may not be fully compatible with the selected analysis pipeline. Common causes include an unsupported MinKNOW version, basecaller model mismatch, barcode trimming settings, an unvalidated barcode kit, or a missing `report.json` file.
-
-Warnings do not block analysis, but should be reviewed before proceeding. If the warning relates to a basecaller model or incompatible MinKNOW version, see [Post-run Basecalling](post-run-basecalling.md).

@@ -15,6 +15,6 @@ See the Software Release Notes for the basecaller model requirements of your spe
 
 3. ***(Optional)* Copy the original `report.json`.** Post-run basecalling does **not** generate a new `report.json`. That file is produced by MinKNOW during the original run, and the Software uses it to display compatibility information between AmplideX One Reporter and MinKNOW. Copying it from the original run directory into the rebasecalled folder enables that compatibility status check.
 
-   > **You will see MinKNOW Warnings either way.** After post-run basecalling, the Software reports warnings about basecaller model incompatibility whether or not `report.json` is present. These warnings can be ignored — you may proceed with the analysis. See [MinKNOW Warnings](create-an-analysis.md#minknow-warnings).
+   > **You will see MinKNOW Warnings either way.** After post-run basecalling, the Software reports warnings about basecaller model incompatibility whether or not `report.json` is present. These warnings can be ignored — you may proceed with the analysis. See [MinKNOW Warnings](configure-an-analysis.md#minknow-warnings).
 
 4. **Import the rebasecalled dataset.** Return to [Create an Analysis](create-an-analysis.md) and choose **Import Dataset...** in the **Dataset** dropdown to import it.

@@ -127,9 +127,11 @@ Use this method when the run data is on a disk the computer running the Software
 
 4. Click **Preview and apply changes** to see the folders the source resolves to. Verify expected folders appear before saving.
 
+   > **Error instead of a folder list?** See [Data Source Errors](../troubleshooting/data-source-errors.md).
+
 5. Click **Save**. The new data source will appear in the **Available Data Sources** list, and as an option when setting up a new analysis.
 
-> **Runs not showing up?** Double-check the Source Path and Import patterns — a misconfiguration is the most common cause.
+> **Runs not showing up?** Double-check the Source Path and Import patterns — a misconfiguration is the most common cause. See also [Missing Datasets](../troubleshooting/common-errors.md#missing-datasets).
 
 ---
 
@@ -158,6 +160,8 @@ Use this method when the run data is on a different computer that the Software m
    > See [Choosing an Account for SSH Credentials](#ssh-account) and [Run Data on a Non-C Drive](#non-c-drive) below before filling in the **Username**, **Password**, and **Source Path** fields.
 
 4. Click **Preview and apply changes** to see the top-level directories. Confirm expected folders are visible.
+
+   > **Cannot connect, or the path is not found?** See [Data Source Errors](../troubleshooting/data-source-errors.md) — the message names which of the two failed.
 
 5. Click **Save**.
 

@@ -75,7 +75,7 @@ A table of the sample sheet's contents appears below the file card.
 | `N/A` in the **Errors** column | That row is valid. |
 | Text in the **Errors** column | That row failed validation. |
 | A red message above the file card, no table | The whole file was rejected — usually a header or file-format problem. |
-| A **warning banner** above the table | The run data may not be fully compatible with the pipeline. This does **not** block the analysis — see [MinKNOW Warnings](create-an-analysis.md#minknow-warnings). |
+| A **warning banner** above the table | The run data may not be fully compatible with the pipeline. This does **not** block the analysis — see [MinKNOW Warnings](#minknow-warnings) below. |
 
 > **Got an error?** See [Sample Sheet Errors](../troubleshooting/sample-sheet-errors.md) for every message, what causes it, and how to fix it.
 
@@ -98,6 +98,14 @@ The button stays disabled until all three conditions are met: a panel filter is 
 > If a red banner reads *No pipelines were found. Starting an analysis is disabled until pipelines are available*, the Software has no pipeline to run against and the analysis cannot be started. Contact support if this persists.
 
 ---
+
+## MinKNOW Warnings {#minknow-warnings}
+
+A yellow warning banner above the sample sheet table means the run data may not be fully compatible with the selected analysis pipeline. Common causes include an unsupported MinKNOW version, a basecaller model mismatch, barcode trimming settings, an unvalidated barcode kit, or a missing `report.json` file.
+
+Warnings **do not block the analysis** — you can select a panel filter, load a sample sheet, and click **Start Analysis** as normal. Review the warning first so you know what it may mean for your results.
+
+If the warning relates to a basecaller model or an incompatible MinKNOW version, see [Post-run Basecalling](post-run-basecalling.md). Data that has already been rebasecalled reports these warnings regardless, and they can be ignored.
 
 ## What's next
 

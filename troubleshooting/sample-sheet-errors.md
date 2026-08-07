@@ -82,7 +82,7 @@ This appears above the sample sheet table and applies to the sheet as a whole, n
 
 ## Warnings
 
-A yellow alert above the table is a **warning**, not an error. Warnings come from checking the sequencing dataset — not from the sample sheet — and they do **not** block the analysis. The most common is a MinKNOW compatibility warning; see [MinKNOW Warnings](../running-an-analysis/create-an-analysis.md#minknow-warnings).
+A yellow alert above the table is a **warning**, not an error. Warnings come from checking the sequencing dataset — not from the sample sheet — and they do **not** block the analysis. The most common is a MinKNOW compatibility warning; see [MinKNOW Warnings](../running-an-analysis/configure-an-analysis.md#minknow-warnings).
 
 ---
 
