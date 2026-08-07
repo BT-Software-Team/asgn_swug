@@ -6,27 +6,35 @@ Every completed analysis writes its full output to disk, and you can browse or d
 
 ## Download Results
 
-1. From the Analysis Dashboard, click the **⋯** menu on an analysis with status **Complete** and choose **View Files**.
+1. From the Analysis Dashboard, click the **⋯** menu on an analysis with status **Complete** and choose **View Files**. The **Download Files** dialog opens, titled with the analysis name.
 
-2. Navigate the folder tree to find specific files. The folder structure mirrors the on-disk layout at:
+2. Expand the folder tree to find the file you want. The structure mirrors the on-disk layout described in [Output Structure](#output-structure) below. Use the search box above the tree to locate a file by name.
 
-   ```
-   [User Data Path]\analyses\{Analysis Id}\results\
-   ```
+3. Click a file to select it, then choose:
 
-3. Click any file to open it in the browser or download it. Supported formats include `.png`, `.html`, `.csv`, `.json`, `.log`, `.txt`, and other common types.
+   | Button | What it does |
+   |--------|--------------|
+   | **View File** | Opens the file in a new browser tab. |
+   | **Download** | Saves the file to your computer. |
+
+   Both buttons stay greyed out until a file is selected. **Cancel** closes the dialog.
+
+   **View File** works for `.png`, `.html`, `.csv`, `.json`, `.txt`, `.vcf`, and `.log` files. Anything else — a `.bam`, for example — must be downloaded and opened in an appropriate application.
 
 ### Access Results Outside the Software
 
-Analysis results remain accessible on disk even after the Software is uninstalled. Navigate to:
+Every completed analysis writes its full output to disk, and those files remain accessible even after the Software is uninstalled:
 
-```
-[User Data Path]\analyses\{Analysis Id}\results\
-```
+| | Path |
+|---|---|
+| **Linux** | `/var/lib/asuragen/analyses/{Analysis Id}/results` |
+| **Windows** | `C:\ProgramData\asuragen\analyses\{Analysis Id}\results` |
+
+See [Default File Locations](../README.md#default-file-locations) for every other path the Software uses.
 
 ---
 
-## Output Structure
+## Output Structure {#output-structure}
 
 ```
 results/

@@ -52,7 +52,7 @@ Every row has an **⋯ (overflow) menu** at its right-hand end. Click it for the
 
 ---
 
-## Table Controls
+## Table Controls {#table-controls}
 
 Each data table in the Software has a toolbar that can be used to customize its view.
 
