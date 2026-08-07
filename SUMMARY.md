@@ -25,6 +25,9 @@
 ## Analysis Results
 
 - [Review Results](analysis-results/review-results.md)
+- [Sample Summary](analysis-results/sample-summary.md)
+- [Genotype Summary](analysis-results/genotype-summary.md)
+- [Variant Results](analysis-results/variant-results.md)
 - [Download Results](analysis-results/download-results.md)
 
 ## Managing Your Team

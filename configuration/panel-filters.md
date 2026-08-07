@@ -12,8 +12,8 @@ Panel filters control which variants are included in analysis results. The Softw
 
 Panel filters operate at two levels:
 
-- **Analyze** — variants included in variant-level results ([Variants](../reference/results-description.md#variants))
-- **Summarize** — a subset of Analyzed variants that are also included in gene-level ([Genotypes Summary](../reference/results-description.md#genotypes-summary)) and sample-level ([Sample Summary](../reference/results-description.md#sample-summary)) results
+- **Analyze** — variants included in variant-level results ([Variant Results](../analysis-results/variant-results.md))
+- **Summarize** — a subset of Analyzed variants that are also included in gene-level ([Genotype Summary](../analysis-results/genotype-summary.md)) and sample-level ([Sample Summary](../analysis-results/sample-summary.md)) results
 
 The Summarize filter is always a subset of the Analyze filter — this is enforced in the UI.
 
@@ -125,7 +125,7 @@ Each kit targets its own set of genes, so selecting a Mix here determines which 
 
 **Which Mixes should you select?** The ones matching the kits you used. If your runs are prepared with Kit A and Kit D, select Mix A and Mix D. Leaving all four selected — as the default filter does — is also fine: a Mix you did not run simply contributes no results.
 
-> A gene covered by more than one kit appears under each of those Mixes, and the two entries are configured independently. For example, SMN1 and SMN2 appear under both Mix A and Mix D, and what each kit reports for them differs — see [Which Variants Appear in Sample Summary (by Gene)](../reference/results-description.md#which-variants-appear-in-sample-summary-by-gene) for the specifics.
+> A gene covered by more than one kit appears under each of those Mixes, and the two entries are configured independently. For example, SMN1 and SMN2 appear under both Mix A and Mix D, and what each kit reports for them differs — see [Which Variants Appear in Sample Summary (by Gene)](../analysis-results/sample-summary.md#which-variants-appear-in-sample-summary-by-gene) for the specifics.
 
 The Mixes included in a given run are recorded with the analysis and shown in your results — see the `Mixes` field in [Configure an Analysis](../running-an-analysis/configure-an-analysis.md).
 

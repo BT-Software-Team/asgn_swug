@@ -24,7 +24,7 @@ When an analysis completes, the Software presents results in three progressively
 
 > The **View Genotype Summary** and **View Variant Results** buttons stay greyed out until you select a row.
 
-For the columns and contents of each view and output file, see [Results Description](../reference/results-description.md).
+For the columns in each view, see [Sample Summary](sample-summary.md), [Genotype Summary](genotype-summary.md), and [Variant Results](variant-results.md). For how variants are called and flagged, see [Results Description](../reference/results-description.md).
 
 ### Move Between Views
 
@@ -46,4 +46,5 @@ Every results view uses the same table toolbar as the Analysis Dashboard — sea
 
 ## What's next
 
+- [Sample Summary](sample-summary.md), [Genotype Summary](genotype-summary.md), and [Variant Results](variant-results.md) — what every column in each view means.
 - [Download Results](download-results.md) — export result files and browse the output folder structure.
