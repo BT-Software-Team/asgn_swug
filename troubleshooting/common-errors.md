@@ -110,6 +110,7 @@ If results pages appear blank after analysis completes:
 | **High frequency of LowCov in one or more Mixes** | Pooling errors; Qubit errors; insufficient Gb target; under-sequencing | Repeat Qubit measurements; use Bench Workbook; increase Gb target; repeat BC-PCR for under-represented samples |
 | **"Alpha cluster duplication" reported erroneously** | Sample contamination; flow cell reuse with same barcode/mix | Apply library to a new or unused flow cell; repeat gene-specific PCR with fresh reagents |
 | **Super accurate basecalling / barcode trimming warning** | Sequencing did not use required basecalling settings | Repeat basecalling with correct settings per Protocol Guide |
+| **Sample sheet will not validate** | Missing values, wrong barcode format, non-tab-delimited file, or mix/calibrator mismatch | See [Sample Sheet Errors](sample-sheet-errors.md) for every message and its fix |
 
 ---
 
@@ -118,7 +119,7 @@ If results pages appear blank after analysis completes:
 **Dataset doesn't appear when importing:**
 
 - GridION users: check that MinKNOW's built-in firewall is **off** (when enabled, it may block dataset imports).
-- Verify the data source configuration is correct, especially the Run Data Path and import patterns.
+- Verify the data source configuration is correct, especially the Run Data Path and import patterns — see [Configure Data Sources](../configuration/data-sources.md).
 
 **Dataset was imported but doesn't appear in Select Dataset dropdown:**
 

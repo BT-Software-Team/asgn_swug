@@ -72,10 +72,12 @@ A table of the sample sheet's contents appears below the file card.
 
 | What you see | What it means |
 |--------------|---------------|
-| A **warning banner** above the table | The run data may not be fully compatible with the pipeline. See [MinKNOW Warnings](create-an-analysis.md#minknow-warnings). This does not block the analysis. |
-| A red error message above the file card | The file could not be processed at all — no table is shown. Correct the file and upload it again. |
-| Text in the **Errors** column | That row failed validation. Check it against the [requirements](#sample-sheet-requirements) above. |
 | `N/A` in the **Errors** column | That row is valid. |
+| Text in the **Errors** column | That row failed validation. |
+| A red message above the file card, no table | The whole file was rejected — usually a header or file-format problem. |
+| A **warning banner** above the table | The run data may not be fully compatible with the pipeline. This does **not** block the analysis — see [MinKNOW Warnings](create-an-analysis.md#minknow-warnings). |
+
+> **Got an error?** See [Sample Sheet Errors](../troubleshooting/sample-sheet-errors.md) for every message, what causes it, and how to fix it.
 
 ### Correct a row
 
