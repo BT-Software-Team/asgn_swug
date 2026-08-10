@@ -76,7 +76,7 @@ These appear as a red message above the file card, and **no table is shown** —
 
 This appears above the sample sheet table and applies to the sheet as a whole, not to one row — no individual row will show an error for it. It clears automatically when you upload a corrected sheet.
 
-> Mixes A and C always require at least one designated calibrator. See the [Protocol Guide](../README.md#additional-resources) for calibrator recommendations.
+> Mixes A and C always require at least one designated calibrator. Performance was verified using two calibrator replicates, and two are recommended — see the [Protocol Guide](../README.md#additional-resources) for details.
 
 ---
 

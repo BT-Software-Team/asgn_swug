@@ -58,6 +58,7 @@
 
 - [Data Storage & Archival](reference/data-storage.md)
 - [Third-Party Licenses](reference/licenses.md)
+- [Disclaimers](reference/licenses.md#disclaimers)
 
 ## Release Notes
 

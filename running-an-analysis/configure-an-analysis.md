@@ -104,6 +104,8 @@ Warnings **do not block the analysis** — you can select a panel filter, load a
 
 If the warning relates to a basecaller model or an incompatible MinKNOW version, see [Post-run Basecalling](post-run-basecalling.md). Data that has already been rebasecalled reports these warnings regardless, and they can be ignored.
 
+If the warning is about a missing `report.json` file, move `report.json` into the directory containing the `.fastq` files, then re-import the dataset from [Create an Analysis](create-an-analysis.md) to clear it.
+
 ## What's next
 
 - [Start & Monitor Execution](start-and-monitor.md) — run the analysis and track its status.

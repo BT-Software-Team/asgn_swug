@@ -2,7 +2,7 @@
 
 A **data source** defines a path or endpoint where sequencing run data is stored and accessible by the Software.
 
-A default data source is created during installation pointing to where MinKNOW stores run data:
+A default data source, named **minknow**, is created during installation pointing to where MinKNOW stores run data:
 
 | OS | Default path |
 |----|-------------|

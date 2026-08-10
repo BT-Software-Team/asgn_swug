@@ -112,6 +112,8 @@ If results pages appear blank after analysis completes:
 | **Super accurate basecalling / barcode trimming warning** | Sequencing did not use required basecalling settings | Repeat basecalling with correct settings per Protocol Guide |
 | **Sample sheet will not validate** | Missing values, wrong barcode format, non-tab-delimited file, or mix/calibrator mismatch | See [Sample Sheet Errors](sample-sheet-errors.md) for every message and its fix |
 
+> **No limit on calibrators.** When investigating CalGT or LowConfidence/FC flags with additional user-defined calibrators, the Software does not cap how many calibrator samples a sample sheet can designate.
+
 ---
 
 ## Missing Datasets {#missing-datasets}

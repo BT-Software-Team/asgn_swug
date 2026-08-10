@@ -22,11 +22,20 @@ If your account was just [created](../managing-your-team/add-a-user.md) or [rese
 1. Enter your **New Password**.
 2. Enter it again in **Confirm New Password**.
 
-   > Your new password must be at least 8 characters long and include a mix of letters, numbers, and symbols.
+   > Your new password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one symbol.
 
 3. Click **Reset Password and Sign In**.
 
 Your account status changes to **Active**, and future sign-ins use your new password directly.
+
+## Troubleshooting Sign-In
+
+| Message | Cause | Fix |
+|---------|-------|-----|
+| `Invalid username or password` | The username or password entered doesn't match an account. | Double-check for typos. If you're not sure of your password, use **Need your password? Learn More** (see above). |
+| `Account is locked out` | Too many failed sign-in attempts in a short period. | Wait and try again shortly. If it persists, contact your organization's admin. |
+| `This account has been deactivated. Please contact your administrator.` | An admin has [deactivated](../managing-your-team/manage-a-user.md#deactivate-an-account) this account. | Ask an admin to [reactivate](../managing-your-team/manage-a-user.md#reactivate-an-account) it — you can't sign in until then. |
+| A server-error page instead of the sign-in form | The Software's identity service isn't reachable (for example, it's still starting up after an install or restart). | Wait a moment and retry. If it persists, see [Troubleshooting](../troubleshooting/common-errors.md). |
 
 ## What's next
 

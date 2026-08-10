@@ -45,7 +45,7 @@ All packages licensed under GPLv2 and MPL 2.0 are included as standalone with no
 
 ---
 
-## Disclaimers
+## Disclaimers {#disclaimers}
 
 1. This Software is only for use with the associated Asuragen product and may not be used with any other products. Any other use is strictly prohibited.
 

@@ -72,7 +72,7 @@ The `coverage.csv` file reports fully spanning reads (FSRs), partially spanning 
 
 **Access:**
 - Table: `[Analysis Id]/results/quality_control/coverage.csv`
-- Visual: `[Analysis Id]/results/quality_control/coverage.html`
+- Visual: `[Analysis Id]/results/quality_control/coverage.html` — the same data summed to the Mix and sample level, as bar charts of total read counts per Mix and per Sample ID/Mix combination.
 
 Reads are tagged Boolean `AR` = analyzed (`TRUE`) or unanalyzed (`FALSE`) — reads may go unanalyzed due to a missing complementary primer, downsampling, or evidence of a PCR artifact. Analyzed reads (`AR` = `TRUE`) appear in both the primary BAM (`[Analysis Id]/results/sample_files/bam/`) and the supplementary BAM (`[Analysis Id]/results/supplementary/bam_files/`); unanalyzed reads (`AR` = `FALSE`) appear only in the supplementary BAM. Only analyzed fully spanning reads are used in downstream analysis.
 
