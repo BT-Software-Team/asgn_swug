@@ -2,6 +2,8 @@
 
 This product incorporates third-party software libraries and components. Below is a list of these components and their respective licenses.
 
+> **Verification status:** The frontend and .NET service rows below were checked directly against the source repositories on 2026-08-10 and are current as of that date. The pipeline/bioinformatics tools (Nextflow through CyVCF2) and infrastructure components (Docker Engine, Dapr, nginx, PostgreSQL, OpenJDK, apt-family packages) live in repositories not available for direct verification in this pass — confirm these with the pipeline and platform teams before relying on this table for a release.
+
 | Dependency | Version | License | Description / Purpose |
 |------------|---------|---------|----------------------|
 | Nextflow | 22.10.1 | Apache v2.0 | Pipeline coordination |
@@ -28,15 +30,16 @@ This product incorporates third-party software libraries and components. Below i
 | ca-certificates | latest | MPL 2.0 | Mozilla certificate authorities for SSL authentication |
 | Distributed Application Runtime (Dapr) | 1.13.0 | Apache v2.0 | Runtime framework for managing microservices and their communication |
 | jq | 1.6-2.1ubuntu3.1 | MIT | Structured JSON data management |
-| MUI X DataGrid Pro | 7.1.1 | Commercial License | User interface framework for displaying results in DataGrid tables |
+| MUI X DataGrid Pro | 8.28.6 | Commercial License | User interface framework for displaying results in DataGrid tables |
 | NGINX | latest | BSD-2-Clause | High-performance web and reverse proxy server for the software UI |
-| .NET 8 | 8.0 | MIT | Core framework for server logic (ASP.NET Core for business logic) |
-| Node.js | 12.22.9~dfsg1ubuntu3.6 | MIT | JavaScript runtime for web services and server-side scripting |
+| .NET 8 | 8.0 | MIT | Core framework for the File Interface service (ASP.NET Core for business logic) |
+| .NET 10 | 10.0 | MIT | Core framework for the Identity Server (authentication/login) |
+| Node.js | 12.22.9~dfsg-1ubuntu3.6 | MIT | JavaScript runtime for web services and server-side scripting |
 | OpenJDK | JDK/JRE major version 17 | GPLv2 (Classpath Exception) | Used by Nextflow |
 | PostgreSQL Server | 14+238 | Permissive | Database server for managing analysis execution state |
-| React | 18.2.0 | MIT | Core framework for the web browser-based user interface |
+| React | 19.2.6 | MIT | Core framework for the web browser-based user interface |
 | software-properties-common | latest | GPLv2 | Abstraction layer for apt repositories on Linux |
-| webpack | 4.43.0-7 | MIT | Bundles Node.js-targeted code to run in the browser |
+| Vite | 8.0.13 | MIT | Bundles the browser-based user interface for production |
 
 All packages licensed under GPLv2 and MPL 2.0 are included as standalone with no modifications.
 

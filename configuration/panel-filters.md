@@ -152,7 +152,7 @@ Select which ClinVar variant classifications are included in Analyze and Summari
 | **uncertain significance** | Uncertain_significance, not_provided, no_classification_for_the_single_variant, Uncertain_significance\|other |
 | **likely benign** | Likely_benign, Benign/Likely_benign\|risk_factor, Benign/Likely_benign |
 | **benign** | Benign, Benign/Likely_benign\|risk_factor, Benign/Likely_benign |
-| **conflicting** | Conflicting_interpretations_of_pathogenicity, Conflicting_classifications_of_pathogenicity, Conflicting_classifications_of_pathogenicity\|other, Conflicting_classifications_of_pathogenicity\|risk_factor |
+| **conflicting** | Conflicting_interpretations_of_pathogenicity, Conflicting_interpretations_of_pathogenicity\|risk_factor, Conflicting_classifications_of_pathogenicity, Conflicting_classifications_of_pathogenicity\|other, Conflicting_classifications_of_pathogenicity\|risk_factor |
 | **drug response** | drug_response, Pathogenic\|drug_response, Benign/Likely_benign\|drug_response |
 | **risk factor** | risk_factor, Pathogenic\|risk_factor, Pathogenic/Likely_pathogenic\|risk_factor, Benign/Likely_benign\|risk_factor, Conflicting_*\|risk_factor |
 | **other** | Pathogenic\|other, other, Conflicting_classifications_of_pathogenicity\|other. Includes unannotated variants. |
@@ -175,7 +175,7 @@ Select which VEP consequences are included. Based on [Ensembl VEP](https://useas
 | **intronic** | intron_variant |
 | **intergenic** | intergenic_variant |
 | **other_high_impact** | transcript_amplification, transcript_ablation, feature_elongation, feature_truncation |
-| **other_non_high_impact** | protein_altering_variant, coding_sequence_variant, mature_miRNA_variant, 5_prime_UTR_variant, 3_prime_UTR_variant, NMD_transcript_variant, upstream_gene_variant, downstream_gene_variant, regulatory_region_variant, sequence_variant, and others. Includes unannotated variants. |
+| **other_non_high_impact** | protein_altering_variant, coding_sequence_variant, mature_miRNA_variant, 5_prime_UTR_variant, 3_prime_UTR_variant, non_coding_transcript_exon_variant, NMD_transcript_variant, coding_transcript_variant, upstream_gene_variant, downstream_gene_variant, TFBS_ablation, TFBS_amplification, TF_binding_site_variant, regulatory_region_ablation, regulatory_region_amplification, regulatory_region_variant, sequence_variant, non_coding_transcript_variant. Includes unannotated variants. |
 | **annotated** | All VEP terms except `.` and `N/A` |
 
 ### VARIANT LISTS tab (optional)
