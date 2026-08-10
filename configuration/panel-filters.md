@@ -43,7 +43,7 @@ Regardless of filter settings, the following variant types are **always** Analyz
 
 ## Open Panel Filters
 
-1. From the **Analysis Dashboard**, click the **gear icon** in the table toolbar to open **System Configuration**.
+1. From the **Analysis Dashboard**, click the **gear icon** in the table toolbar to open **Analysis Configuration**.
 2. Select **Panel Filters** in the left-hand menu.
 
 The Panel Filters screen lists:
@@ -98,7 +98,7 @@ To change anything on this page, click the **edit (pencil) icon** in the upper-r
 
 ## Create a New Panel Filter Configuration
 
-1. From the **Analysis Dashboard**, click the **gear icon** in the table toolbar to open **System Configuration**.
+1. From the **Analysis Dashboard**, click the **gear icon** in the table toolbar to open **Analysis Configuration**.
 2. Select **Panel Filters** in the left-hand menu.
 3. Under **Add new panel filter**, click **Create New**.
 4. Enter a name in **Panel Filter Title**. Names may contain letters, numbers, periods, dashes, and underscores only.
@@ -207,7 +207,7 @@ HBB:c.316-185C>T
 
 ## Edit an Existing Panel Filter
 
-1. Open **System Configuration** → **Panel Filters**, then click the filter under **Custom Panel Filters** to open its summary.
+1. Open **Analysis Configuration** → **Panel Filters**, then click the filter under **Custom Panel Filters** to open its summary.
 2. Click the **edit (pencil) icon** in the upper-right corner.
 3. Change settings using the same tabs described above.
 4. Click **Save Filters**. The button appears once you have made a change; if nothing has changed, there is nothing to save.

@@ -4,7 +4,17 @@ This section covers the methods behind the results — how each class of variant
 
 The primary results are annotated variant calls in `.csv` and `.vcf` format ([Variant Results](../analysis-results/variant-results.md)). These are summarized into per-gene genotypes ([Genotype Summary](../analysis-results/genotype-summary.md)) and then into a per-sample overview ([Sample Summary](../analysis-results/sample-summary.md)). Both summaries include QC flags and are reported in `.csv` format.
 
-- [SNVs/Indels](snvs-indels.md), [Copy Number Variants](copy-number-variants.md), [Structural Variants](structural-variants.md), and [Short Tandem Repeats](short-tandem-repeats.md) — how each variant class is detected.
+## Variant Classes {#variant-classes}
+
+The Software detects four classes of variant, each with its own calling method:
+
+- [SNVs/Indels](snvs-indels.md)
+- [Copy Number Variants](copy-number-variants.md)
+- [Structural Variants](structural-variants.md)
+- [Short Tandem Repeats](short-tandem-repeats.md)
+
+Also in this section:
+
 - [Gene-Specific Details](gene-specific-details.md) — per-gene notation and considerations.
 - [Quality Control](quality-control.md) — QC flags, the analysis identifier reference, and coverage reporting.
 

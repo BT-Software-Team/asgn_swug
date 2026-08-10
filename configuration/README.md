@@ -1,10 +1,10 @@
 # Configuration Overview
 
-**System Configuration** is where you set up everything an analysis depends on before you run it: where the Software looks for sequencing data, which variants it reports on, and whether other computers on the network can reach it.
+**Analysis Configuration** is where you set up everything an analysis depends on before you run it: where the Software looks for sequencing data, which variants it reports on, and whether other computers on the network can reach it.
 
 These settings are set up once — typically during installation or when a new instrument is added — and then reused by every analysis. You do not configure them each time you run a sample.
 
-> System Configuration is separate from the account **Settings** menu, which covers your own profile, password, and team members. If you are looking for user accounts, see [Managing Your Team](../managing-your-team/add-a-user.md).
+> Analysis Configuration is separate from the account **Settings** menu, which covers your own profile, password, and team members. If you are looking for user accounts, see [Managing Your Team](../managing-your-team/add-a-user.md).
 
 ---
 
@@ -18,11 +18,11 @@ These settings are set up once — typically during installation or when a new i
 
 ---
 
-## Open System Configuration
+## Open Analysis Configuration
 
 1. Go to the **Analysis Dashboard** — the main screen listing your analyses.
 2. In the table toolbar above the list, click the **gear icon**.
-3. System Configuration opens with a menu on the left-hand side. Select the area you want: **Data Sources**, **Panel Filters**, or **Remote Access**.
+3. Analysis Configuration opens with a menu on the left-hand side. Select the area you want: **Data Sources**, **Panel Filters**, or **Remote Access**.
 
 Every configuration procedure in this guide begins from this screen.
 

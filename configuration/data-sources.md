@@ -1,5 +1,16 @@
 # Configure Data Sources
 
+## Open Analysis Configuration
+
+Data source setup lives in **Analysis Configuration**, in the **Analysis Table** toolbar. Here you are able to add, modify, and remove Local and Remote data sources.
+
+1. From the **Analysis Dashboard**, click the **gear icon** in the table toolbar.
+2. In the left-hand menu, select **Data Sources**.
+
+For everything else Analysis Configuration covers, see [Configuration Overview](README.md).
+
+---
+
 A **data source** defines a path or endpoint where sequencing run data is stored and accessible by the Software.
 
 A default data source, named **minknow**, is created during installation pointing to where MinKNOW stores run data:
@@ -29,20 +40,11 @@ After a dataset is imported, it is copied to a managed location:
 
 ---
 
-## Open System Configuration
-
-Data source setup lives in **System Configuration**, not the account **Settings** menu.
-
-1. From the **Analysis Dashboard**, click the **gear icon** in the table toolbar.
-2. In the left-hand menu, select **Data Sources**.
-
-For everything else System Configuration covers, see [Configuration Overview](README.md).
-
 ## Add a Local Data Source
 
 Use this method when the run data is on a disk the computer running the Software can already reach — an internal drive, an attached external drive, or an OS-mounted network share.
 
-1. Open **System Configuration** → **Data Sources**.
+1. Open **Analysis Configuration** → **Data Sources**.
 
 2. Under **Add new data source**, click **Create New**.
 
@@ -141,7 +143,7 @@ Use this method when the run data is on a different computer that the Software m
 
 > **Requirement:** SSH access on port 22 (enabled by default on GridION).
 
-1. Open **System Configuration** → **Data Sources**.
+1. Open **Analysis Configuration** → **Data Sources**.
 
 2. Under **Add new data source**, click **Create New**.
 
@@ -217,14 +219,14 @@ Use this when sequencing data has moved to a different path, or when SSH credent
 
 > **Credential changes:** If the account configured for a data source is disabled, sequencing runs at that endpoint will disappear from the import list. Update the data source with a working account to restore access.
 
-1. Open **System Configuration** → **Data Sources**, then click the data source in the **Available Data Sources** list to open its details.
+1. Open **Analysis Configuration** → **Data Sources**, then click the data source in the **Available Data Sources** list to open its details.
 2. Click the **pencil (edit)** icon, update the relevant fields using the same instructions above, then click **Preview and apply changes** → **Save**.
 
 ---
 
 ## Remove a Data Source
 
-1. Open **System Configuration** → **Data Sources**, then click the data source in the **Available Data Sources** list to open its details.
+1. Open **Analysis Configuration** → **Data Sources**, then click the data source in the **Available Data Sources** list to open its details.
 2. Click the **trash (delete)** icon.
 3. In the **Remove data source?** confirmation, click **Remove**.
 
@@ -236,7 +238,7 @@ Remote access controls whether other computers on the network can connect to the
 
 > **Security note:** The Software does not include authentication or authorization controls. Secure remote access with a firewall or network access controls before enabling.
 
-1. Open **System Configuration** (gear icon in the Analysis Dashboard toolbar).
+1. Open **Analysis Configuration** (gear icon in the Analysis Dashboard toolbar).
 2. Select **Remote Access** in the left-hand menu.
 3. Toggle **Allow connection from other computers** on to allow access from other computers on the local network, or off to limit access to the local machine only.
 

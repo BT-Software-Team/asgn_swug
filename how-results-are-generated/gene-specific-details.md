@@ -2,7 +2,11 @@
 
 Each gene has unique considerations and nuances for correctly interpreting variant calling results.
 
-## Genotype Notation
+## Variant Reports {#variant-reports}
+
+How results are formatted and presented per gene.
+
+### Genotype Notation
 
 How the `Genotype` column in [Genotype Summary](../analysis-results/genotype-summary.md) is formatted, per gene:
 
