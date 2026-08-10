@@ -19,7 +19,7 @@ The **Default View** column below indicates whether that column is shown when yo
 | Sample_Name | Yes | User-provided name |
 | Barcode | Yes | Barcode applied to the sample |
 | Mix | No | Mix the variant is in |
-| QC | Yes | QC flags for this variant. Multiple flags separated by `;`. See [Quality Control](../reference/results-description.md#quality-control). |
+| QC | Yes | QC flags for this variant. Multiple flags separated by `;`. See [Quality Control](../how-results-are-generated/quality-control.md). |
 | Gene | Yes | Gene the variant is in. Overlapping transcripts show concatenated name (e.g., `CYP21A2_TNXB`). `HBA` for alpha-globin cluster amplicons that are not HBA1 or HBA2. |
 | Variant | Yes | Variant call. cDNA change (HGVS) for SNVs/Indels; SV subtype for structural variants; CGG/AGG for FMR1; `.` for reference-matching variants (e.g., copy numbers). |
 | Genotype | Yes | VCF-format phasing. `\|` = phased; `/` = unphased. For copy number SVs: `0/1` = single deletion; `./1` = single duplication; `1/1` = two duplications; `./.` = unknown. |
@@ -118,5 +118,5 @@ Per-sample VCF files follow VCFv4.2 specifications.
 
 ## What's next
 
-- [Variant Classes](../reference/results-description.md#variant-classes) — how SNVs/Indels, CNVs, and SVs are called.
-- [Quality Control](../reference/results-description.md#quality-control) — QC flags and coverage reporting.
+- [SNVs/Indels](../how-results-are-generated/snvs-indels.md), [Copy Number Variants](../how-results-are-generated/copy-number-variants.md), [Structural Variants](../how-results-are-generated/structural-variants.md), [Short Tandem Repeats](../how-results-are-generated/short-tandem-repeats.md) — how each variant class is called.
+- [Quality Control](../how-results-are-generated/quality-control.md) — QC flags and coverage reporting.

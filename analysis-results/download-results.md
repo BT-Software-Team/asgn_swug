@@ -98,4 +98,4 @@ results/
     └── raw_variants.csv          # Unfiltered variants table
 ```
 
-For the columns in each results file, see [Sample Summary](sample-summary.md), [Genotype Summary](genotype-summary.md), and [Variant Results](variant-results.md). For variant-calling methods and QC, see [Results Description](../reference/results-description.md).
+For the columns in each results file, see [Sample Summary](sample-summary.md), [Genotype Summary](genotype-summary.md), and [Variant Results](variant-results.md). For variant-calling methods and QC, see [How Results Are Generated](../how-results-are-generated/overview.md).

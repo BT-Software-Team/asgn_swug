@@ -30,6 +30,16 @@
 - [Variant Results](analysis-results/variant-results.md)
 - [Download Results](analysis-results/download-results.md)
 
+## How Results Are Generated
+
+- [Overview](how-results-are-generated/overview.md)
+- [SNVs/Indels](how-results-are-generated/snvs-indels.md)
+- [Copy Number Variants](how-results-are-generated/copy-number-variants.md)
+- [Structural Variants](how-results-are-generated/structural-variants.md)
+- [Short Tandem Repeats](how-results-are-generated/short-tandem-repeats.md)
+- [Gene-Specific Details](how-results-are-generated/gene-specific-details.md)
+- [Quality Control](how-results-are-generated/quality-control.md)
+
 ## Managing Your Team
 
 - [Add a User](managing-your-team/add-a-user.md)
@@ -46,7 +56,6 @@
 
 ## Reference
 
-- [Results Description](reference/results-description.md)
 - [Data Storage & Archival](reference/data-storage.md)
 - [Third-Party Licenses](reference/licenses.md)
 

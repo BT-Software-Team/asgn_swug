@@ -24,7 +24,7 @@ When an analysis completes, the Software presents results in three progressively
 
 > The **View Genotype Summary** and **View Variant Results** buttons stay greyed out until you select a row.
 
-For the columns in each view, see [Sample Summary](sample-summary.md), [Genotype Summary](genotype-summary.md), and [Variant Results](variant-results.md). For how variants are called and flagged, see [Results Description](../reference/results-description.md).
+For the columns in each view, see [Sample Summary](sample-summary.md), [Genotype Summary](genotype-summary.md), and [Variant Results](variant-results.md). For how variants are called and flagged, see [How Results Are Generated](../how-results-are-generated/overview.md).
 
 ### Move Between Views
 

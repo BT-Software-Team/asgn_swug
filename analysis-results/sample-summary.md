@@ -12,7 +12,7 @@ The highest-level overview of variants per sample. Only variants that pass the *
 | Column | Description |
 |--------|-------------|
 | **Sample_Name** | User-provided sample name |
-| **QC** | QC flags per Mix. `PASS` if all Mixes pass; `FLAG(Mix)` or `FAIL(Mix)` if a Mix has issues; combinations separated by `;`. See [Quality Control](../reference/results-description.md#quality-control). |
+| **QC** | QC flags per Mix. `PASS` if all Mixes pass; `FLAG(Mix)` or `FAIL(Mix)` if a Mix has issues; combinations separated by `;`. See [Quality Control](../how-results-are-generated/quality-control.md). |
 | **Genes\[Status\]** | High-level genotype overview. Copy-number genes (HBA1/2, SMN1/2, GBA1, CYP21A2, TNXB) show copy count + `cp`. Variant counts use the symbols in the table below. Phase shown as `(1\|0)` / `(0\|1)`; homozygous as `(H)`. No variants → `No Variants`. |
 | **Barcode** | Barcode applied to the sample |
 | **Mixes** | Mixes analyzed for the sample |
@@ -47,4 +47,4 @@ The highest-level overview of variants per sample. Only variants that pass the *
 ## What's next
 
 - [Genotype Summary](genotype-summary.md) — per-gene genotypes for a sample.
-- [Variant Classes](../reference/results-description.md#variant-classes) and [Quality Control](../reference/results-description.md#quality-control) — how variants are called and flagged.
+- [SNVs/Indels](../how-results-are-generated/snvs-indels.md), [Copy Number Variants](../how-results-are-generated/copy-number-variants.md), [Structural Variants](../how-results-are-generated/structural-variants.md), [Short Tandem Repeats](../how-results-are-generated/short-tandem-repeats.md), and [Quality Control](../how-results-are-generated/quality-control.md) — how variants are called and flagged.
