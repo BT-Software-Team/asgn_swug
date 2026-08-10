@@ -1,6 +1,6 @@
 # Review Results
 
-When an analysis completes, the Software presents results in three progressively more detailed views — sample, genotype, and variant — plus interactive figures. This page shows how to drill down through them and share what you find.
+When an analysis completes, the Software presents results in three progressively more detailed views — sample, genotype, and variant — plus interactive figures. This page shows how to drill down through them and share what you find. For the methods and QC behind what you're looking at, see [How Results Are Generated](../how-results-are-generated/overview.md).
 
 > **Prerequisite:** The analysis must have status **Complete**.
 >
@@ -24,7 +24,7 @@ When an analysis completes, the Software presents results in three progressively
 
 > The **View Genotype Summary** and **View Variant Results** buttons stay greyed out until you select a row.
 
-For the columns in each view, see [Sample Summary](sample-summary.md), [Genotype Summary](genotype-summary.md), and [Variant Results](variant-results.md). For how variants are called and flagged, see [How Results Are Generated](../how-results-are-generated/overview.md).
+For the columns in each view, see [Sample Summary](sample-summary.md), [Genotype Summary](genotype-summary.md), and [Variant Results](variant-results.md).
 
 ### Move Between Views
 
@@ -47,4 +47,5 @@ Every results view uses the same table toolbar as the Analysis Dashboard — sea
 ## What's next
 
 - [Sample Summary](sample-summary.md), [Genotype Summary](genotype-summary.md), and [Variant Results](variant-results.md) — what every column in each view means.
+- [How Results Are Generated](../how-results-are-generated/overview.md) — how each variant class is called and how QC is applied.
 - [Download Results](download-results.md) — export result files and browse the output folder structure.
