@@ -10,12 +10,12 @@ The AmplideX® One Reporter and AmplideX Nanopore Carrier Plus Analysis Module (
 
 ## Compatible Kits
 
-| Reference | Kit |
-|-----------|-----|
-| A00627 | AmplideX Nanopore Carrier Plus Kit A (Mix A) |
-| A00628 | AmplideX Nanopore Carrier Plus Kit B (Mix B) |
-| A00629 | AmplideX Nanopore Carrier Plus Kit C (Mix C) |
-| A00630 | AmplideX Nanopore Carrier Plus Kit D (Mix D) |
+| Reference | Kit | Mix |
+|-----------|-----|-----|
+| A00627 | AmplideX Nanopore Carrier Plus Kit A | Mix A |
+| A00628 | AmplideX Nanopore Carrier Plus Kit B | Mix B |
+| A00629 | AmplideX Nanopore Carrier Plus Kit C | Mix C |
+| A00630 | AmplideX Nanopore Carrier Plus Kit D | Mix D |
 
 ## Compatible Sequencing Instruments
 
