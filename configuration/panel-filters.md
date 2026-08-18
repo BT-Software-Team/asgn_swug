@@ -15,14 +15,16 @@ Panel filters operate at two levels:
 - **Analyze** — variants included in variant-level results ([Variant Results](../analysis-results/variant-results.md))
 - **Summarize** — a subset of Analyzed variants that are also included in gene-level ([Genotype Summary](../analysis-results/genotype-summary.md)) and sample-level ([Sample Summary](../analysis-results/sample-summary.md)) results
 
-The Summarize filter is always a subset of the Analyze filter — this is enforced in the UI.
+The Summarize filter is always a subset of the Analyze filter — this is enforced in the UI. A variant that passes neither filter does not appear in any result.
 
-| File / View | Neither | Analyze only | Analyze & Summarize |
-|-------------|---------|-------------|----------------------|
-| Sample Summary view / `sample_summary.csv` | Not included | Not included | Included |
-| Genotype Summary view / `genotypes_summary.csv` | Not included | Not included | Included |
-| Variant Results view / `variants.csv` | Not included | Included | Included |
-| `[Sample]_VARIANTS.CSV` / `.VCF` | Not included | Included | Included |
+The table below shows where a variant appears depending on which filter it passes:
+
+| File / View | Passes Analyze | Passes Summarize |
+|-------------|----------------|------------------|
+| Variant Results view / `variants.csv` | Included | Included |
+| `[Sample]_VARIANTS.CSV` / `.VCF` | Included | Included |
+| Genotype Summary view / `genotypes_summary.csv` | Not included | Included |
+| Sample Summary view / `sample_summary.csv` | Not included | Included |
 
 ### Inclusion logic
 
