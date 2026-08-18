@@ -34,12 +34,31 @@ For a variant to appear in Analyze or Summarize results, the following must be t
 Gene AND EITHER (Default OR ((ClinVar Classification OR VEP OR Inclusion List) NOT Exclusion List))
 ```
 
-Regardless of filter settings, the following variant types are **always** Analyzed and Summarized:
+### Default Filter behavior
 
-- Structural Variants (SVs, including copy number variants)
-- Short Tandem Repeats (STRs)
-- Linked Variants (LVs): `c.*3+80 T>G`, `c.*211_*212del` present in SMN1 only
-- SMN2 disease modifier variant `c.859G>C`
+Some variant types — Structural Variants, Short Tandem Repeats, and specific SMN1/SMN2 variants — are not classified by the ClinVar or VEP settings. The Default Filter covers them through its variant inclusion and exclusion lists. These are ordinary filter settings, not fixed behavior: a custom panel filter can change them on the [VARIANT LISTS tab](#variant-lists-tab-optional).
+
+**Analysis.** The Default Filter selects all genes, all ClinVar classifications, and all VEP consequences, and its inclusion list adds `Variant_Type=SV` and `Variant_Type=STR`. Every called variant is therefore Analyzed, including Structural Variants (SVs, including copy number variants) and Short Tandem Repeats (STRs). Its exclusion list is empty.
+
+**Summaries.** The Default Filter selects ClinVar **pathogenic** and **likely pathogenic** and VEP **nonsense**. Its inclusion list adds the following regardless of classification:
+
+| Inclusion list entry | Effect |
+|----------------------|--------|
+| `SMN1:c.*3+80T>G`, `SMN1:c.*211_*212del` | The two SMN1 Linked Variants (LVs) |
+| `SMN2:c.859G>C` | The SMN2 disease modifier variant |
+| `Variant_Info%5T` | `5T` poly-T tract variants |
+| `Variant_Type=SV` | All Structural Variants |
+| `Gene!=CFTR&Variant_Type=STR` | Short Tandem Repeats in every gene except CFTR |
+
+Its exclusion list removes the following exon-deletion subtypes, which overrides the `Variant_Type=SV` inclusion above:
+
+```
+Variant_Info=deleEx01, Variant_Info=deleEx02, Variant_Info=deleEx03, Variant_Info=deleEx04,
+Variant_Info=deleEx05Ex07, Variant_Info=deleEx08Ex09, Variant_Info=deleEx10, Variant_Info=deleEx11,
+Variant_Info=deleEx12Ex13, Variant_Info=deleEx14, Variant_Info=deleEx15, Variant_Info=deleEx16Ex17,
+Variant_Info=deleEx18, Variant_Info=deleEx21, Variant_Info=deleEx22, Variant_Info=deleEx23,
+Variant_Info=deleEx24, Variant_Info=deleEx25Ex27
+```
 
 ---
 
@@ -184,9 +203,11 @@ Select which VEP consequences are included. Based on [Ensembl VEP](https://useas
 
 Use this tab to include or exclude specific variants by HGVS identifier. If no lists are provided, all variants passing the Gene, ClinVar, and VEP filters are included.
 
-**Exclusion List:** variants always excluded from both Analyze and Summarize, regardless of other settings. The exclusion list overrides the inclusion list.
+The tab has two groups — **Analysis** and **Summaries** — each with its own **Exclusion list** and **Inclusion list**. The four lists are independent: excluding a variant from Summaries does not remove it from Analysis results. Each list is seeded with the [Default Filter](#default-filter-behavior) values and can be restored to them.
 
-**Inclusion List:** variants always included in both Analyze and Summarize, regardless of ClinVar/VEP settings. Gene-level Analyze/Summarize toggles still apply — a variant won't be included if its gene is not toggled on.
+**Exclusion list:** variants excluded from that level regardless of other settings. The exclusion list overrides the inclusion list.
+
+**Inclusion list:** variants included at that level regardless of ClinVar/VEP settings. Gene-level Analyze/Summarize toggles still apply — a variant won't be included if its gene is not toggled on.
 
 #### Variant list file format
 
