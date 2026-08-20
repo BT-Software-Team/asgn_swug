@@ -113,7 +113,7 @@ To change anything on this page, click the **edit (pencil) icon** in the upper-r
 - **Gene Targets:** All Mixes and all genes are selected for both Analyze and Summarize.
 - **ClinVar:** All categories are Analyzed; only Pathogenic and Likely Pathogenic are Summarized.
 - **Variant Effect:** All consequences are Analyzed; only `nonsense` is Summarized.
-- **Variant Lists:** No inclusion or exclusion lists are defined by default.
+- **Variant Lists:** Analysis and Summaries each have their own default inclusion/exclusion lists built from column-value expressions — see [Default Filter behavior](#default-filter-behavior) above for the full lists.
 
 ---
 
@@ -201,7 +201,7 @@ Select which VEP consequences are included. Based on [Ensembl VEP](https://useas
 
 ### VARIANT LISTS tab (optional)
 
-Use this tab to include or exclude specific variants by HGVS identifier. If no lists are provided, all variants passing the Gene, ClinVar, and VEP filters are included.
+Use this tab to include or exclude specific variants. Entries can be HGVS-format variant identifiers or column-value expressions — see [Variant list file format](#variant-list-file-format) below. If no lists are provided, all variants passing the Gene, ClinVar, and VEP filters are included.
 
 The tab has two groups — **Analysis** and **Summaries** — each with its own **Exclusion list** and **Inclusion list**. The four lists are independent: excluding a variant from Summaries does not remove it from Analysis results. Each list is seeded with the [Default Filter](#default-filter-behavior) values and can be restored to them.
 
@@ -209,12 +209,19 @@ The tab has two groups — **Analysis** and **Summaries** — each with its own 
 
 **Inclusion list:** variants included at that level regardless of ClinVar/VEP settings. Gene-level Analyze/Summarize toggles still apply — a variant won't be included if its gene is not toggled on.
 
-#### Variant list file format
+#### Variant list file format {#variant-list-file-format}
 
-Upload a plain text file containing a comma-separated list of variants in modified HGVS format: `GENE_NAME:NAME`
+Upload a plain text file containing a comma-separated list of entries. Each entry is either an HGVS-format variant identifier or a column-value expression.
+
+**HGVS format:** `GENE_NAME:NAME`
 
 - `GENE_NAME` must match the gene name shown in the GENE FILTER tab.
 - `NAME` is the variant in MANE Select reference notation.
+
+**Column-value expressions:** a column name, an operator, and a value — for example `Variant_Type=SNV` or `Read_Depth>10`. Multiple conditions can be combined with `&` (AND) — for example `Gene!=CFTR&Variant_Type=STR`. See [Variant Results](../analysis-results/variant-results.md) for the columns available. The Default Filter's own inclusion and exclusion lists (above) are built from expressions like these.
+
+Rules for both formats:
+
 - No header row.
 - The list must not end with a trailing comma.
 
@@ -224,6 +231,8 @@ Valid examples:
 HBB:c.316-185C>T,GBA1:c.1226A>G
 HBB:c.316-185C>T, GBA1:c.1226A>G
 HBB:c.316-185C>T
+Variant_Type=SV
+Gene!=CFTR&Variant_Type=STR
 ```
 
 ---
