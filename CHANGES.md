@@ -1,5 +1,7 @@
 # Software User Guide — Change Summary
 
+**Version 4** · Every guide-content commit through `1ecafd0` (2026-08-20) is reflected below. (Commits that only touch this file, like the one introducing this line, don't need an entry.) To check for drift: `git log 1ecafd0..HEAD -- . ':!CHANGES.md'` on `asgn_swug` — any output means new guide changes have landed since this was last updated.
+
 Covers every substantive change made to the guide since the initial port of `SWUG_Working.docx` into markdown (commits `a2682df`/`52e53fa`, 2026-07-15 — baseline, not itemized below). Organized by *why* the change was made, not chronologically. Commit hashes are given for traceability back into `asgn_swug`.
 
 ---
@@ -58,8 +60,10 @@ Direct corrections driven by your feedback — either given in conversation or m
   - Restored the Sample Summary row's "additional gene-specific rules" qualifier as a table footnote, without reintroducing the removed "Neither" column.
   - Fixed two dead/stale references: the logic walkthrough now links to the real "Default Filter behavior" anchor instead of a section name that no longer exists, and Sample Summary's dangling "(Table 4 in the source guide)" citation now links to its own gene-rules section.
 - **CFTR gene name restored in the duplicated-amplicon `PHASE` flag sentence** (`78f3adf`) — "SNVs in duplicated amplicons" → "SNVs in duplicated CFTR amplicons." HBB's own entry uses the same "duplicated amplicons" phrasing in its own context, so the CFTR sentence read as a general claim once the gene name was dropped. Caught via cross-check against the old Carrier Plus guide (00003932v4) while auditing the Word document against this repo.
+- **Troubleshooting by Observation — mechanisms and thresholds restored** (`1ecafd0`), confirmed missing against the old Carrier Plus guide (00003932v4) via the Word-doc handoff: why `BUILTIN\Administrators` is required for the scheduled task; the CalGT use case (Mix A/C issues from sample type/isolation method) plus a pointer to QC Flags Reference for the exact genotype requirements; the NTC `>2 ng/µL` measurement condition; the Amplicon-level LowCov evaporation mechanism (alters PCR efficiency/bead ratios/size selection); Qubit incubation time as a cause of uneven read distribution; and the alpha-cluster duplication mechanism (excessive sequence deconvolution allele groups). Rows that already carried this detail were left alone — see conversation for the row-by-row verification.
 
 ---
 
 **Resolved:**
 - The CFTR redline about `c.2051_2052delinsG` / duplicated-amplicon `PHASE` flag wording — the "original" (pre-redline) text was never in git; it lives only in the old Carrier Plus guide (00003932v4), the ancestor of the section that was rewritten here. The guide already carries the "updated" wording; the only actual gap found was the dropped "CFTR" qualifier, fixed above.
+- **Register/house style — decided.** The guide keeps contractions (`can't`, `doesn't`, `aren't`, etc.), the style already applied consistently throughout. There is no DHF house-style rule requiring formal (non-contraction) language. This was raised independently on both sides of the repo/doc sync — recording the decision here so it isn't re-litigated in a future audit pass.
