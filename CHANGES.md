@@ -52,8 +52,14 @@ Direct corrections driven by your feedback — either given in conversation or m
   - "Variant Lists: No inclusion or exclusion lists are defined by default" corrected — the Default Filter does define default inclusion/exclusion lists; the bullet now points to the Default Filter behavior section.
   - Variant Lists tab intro no longer implies HGVS identifiers are the only supported entry format.
   - "Variant list file format" now documents column-value expressions (e.g., `Variant_Type=SNV`, `Read_Depth>10`) alongside HGVS format, with a link to Variant Results for the available columns.
+- **Analyze vs. Summarize — detail restored from the original spec, two dead links fixed** (`2e65d82`):
+  - Restored the rationale for the two-tier Analyze/Summarize design (why variants get "elevated" into summaries).
+  - Restored a plain-English walkthrough of the inclusion-logic formula, reworded so "Default" ties to the active filter's editable inclusion list rather than implying fixed/hardcoded behavior.
+  - Restored the Sample Summary row's "additional gene-specific rules" qualifier as a table footnote, without reintroducing the removed "Neither" column.
+  - Fixed two dead/stale references: the logic walkthrough now links to the real "Default Filter behavior" anchor instead of a section name that no longer exists, and Sample Summary's dangling "(Table 4 in the source guide)" citation now links to its own gene-rules section.
+- **CFTR gene name restored in the duplicated-amplicon `PHASE` flag sentence** (`78f3adf`) — "SNVs in duplicated amplicons" → "SNVs in duplicated CFTR amplicons." HBB's own entry uses the same "duplicated amplicons" phrasing in its own context, so the CFTR sentence read as a general claim once the gene name was dropped. Caught via cross-check against the old Carrier Plus guide (00003932v4) while auditing the Word document against this repo.
 
 ---
 
-**Not yet resolved / worth double-checking against your Word doc:**
-- The CFTR redline you flagged earlier (about `c.2051_2052delinsG` / duplicated-amplicon `PHASE` flag wording) — I couldn't locate the "original" (pre-redline) text in any accessible repository; the guide already carries your "updated" wording. Flagging again here in case it points to a document I still haven't checked.
+**Resolved:**
+- The CFTR redline about `c.2051_2052delinsG` / duplicated-amplicon `PHASE` flag wording — the "original" (pre-redline) text was never in git; it lives only in the old Carrier Plus guide (00003932v4), the ancestor of the section that was rewritten here. The guide already carries the "updated" wording; the only actual gap found was the dropped "CFTR" qualifier, fixed above.
