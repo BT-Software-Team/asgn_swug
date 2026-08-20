@@ -29,6 +29,8 @@ Windows may be blocking WSL from running on behalf of another user. To fix this,
 6. Click **OK** to save.
 7. Right-click the task → **Run** → **Refresh** and confirm the status is **Running**.
 
+> **Why `BUILTIN\Administrators`?** Windows only allows this specific group to execute WSL, and only for users who belong to it. Substituting a different group or a named admin account will not work.
+
 > **Note:** Only administrator accounts can operate the Software when the task is configured this way.
 
 If the Software still does not start, contact Asuragen Technical Support.
@@ -101,14 +103,14 @@ If results pages appear blank after analysis completes:
 | Observation | Potential Cause | Action |
 |-------------|----------------|--------|
 | **Calibrator-specific low coverage (CalLowCov)** | Wrong calibrator input volume or mass; wrong sample marked as calibrator; incorrect pooling of calibrator PCR product | Add calibrator at recommended input volume; update sample sheet with correctly marked calibrators; repeat analysis |
-| **Incompatible calibrator genotype (CalGT)** | Incompatible user-provided calibrator | Use known normal (2-copy) samples in conjunction with the kit calibrator. Mark additional calibrators in the sample sheet. |
-| **Expected QC Fail not observed for NTC** | Sample contamination; reuse of flow cell with same barcode/mix combination | Check NTC fully spanning read depth (should be <100 FSRs or >1000-fold below sample median); apply library to a new/unused flow cell; repeat gene-specific PCR with fresh reagents |
-| **Amplicon-level LowCov flag** | Evaporation during PCR from improper plate sealing; insufficient sample quantity/quality; unsupported sample type; under-sequencing | Verify plate sealing and well volumes; confirm sample quantity/quality per Protocol Guide; check Estimated Gb Target in sequencing settings |
+| **Incompatible calibrator genotype (CalGT)** | Incompatible user-provided calibrator — most often needed when Mix A/C performance issues are attributed to sample type or isolation method | Use known normal (2-copy) samples in conjunction with the kit calibrator. Mark additional calibrators in the sample sheet. See [QC Flags Reference](../how-results-are-generated/quality-control.md) for the exact genotype requirements CalGT checks. |
+| **Expected QC Fail not observed for NTC** | Sample contamination; reuse of flow cell with same barcode/mix combination | Check NTC fully spanning read depth for NTCs measuring >2 ng/µL after barcoding PCR (should be <100 FSRs or >1000-fold below sample median); apply library to a new/unused flow cell; repeat gene-specific PCR with fresh reagents |
+| **Amplicon-level LowCov flag** | Evaporation during PCR from improper plate sealing — alters per-amplicon PCR efficiency and bead ratios, changing size selection; insufficient sample quantity/quality; unsupported sample type; under-sequencing | Verify plate sealing and well volumes; confirm sample quantity/quality per Protocol Guide; check Estimated Gb Target in sequencing settings |
 | **Sample-level QC fail from low coverage** | Mass calculation errors leading to pooling imbalance; insufficient sample quantity/quality; reads just below QC cutoffs | Use Bench Workbook for calculations; check barcode PCR plate volumes; repeat sequencing with increased Gb target |
 | **LowConfidence or FC QC flags** | Insufficient sample quantity/quality; unsupported sample type | Repeat sequencing; if persistent, repeat sample prep from gene-specific PCR; if common across an isolation batch, consider user-defined calibrators |
-| **Uneven read distribution across samples** | Qubit measurement error; manual pooling calculation error; expanded Mix B samples; poor PCR amplification | Repeat Qubit measurements; use Bench Workbook for pooling; dilute samples with Pooled Sample Mass Ratio >1.2 before within-mix pooling |
+| **Uneven read distribution across samples** | Qubit measurement error (e.g., insufficient incubation time); manual pooling calculation error; expanded Mix B samples; poor PCR amplification | Repeat Qubit measurements; use Bench Workbook for pooling; dilute samples with Pooled Sample Mass Ratio >1.2 before within-mix pooling |
 | **High frequency of LowCov in one or more Mixes** | Pooling errors; Qubit errors; insufficient Gb target; under-sequencing | Repeat Qubit measurements; use Bench Workbook; increase Gb target; repeat BC-PCR for under-represented samples |
-| **"Alpha cluster duplication" reported erroneously** | Sample contamination; flow cell reuse with same barcode/mix | Apply library to a new or unused flow cell; repeat gene-specific PCR with fresh reagents |
+| **"Alpha cluster duplication" reported erroneously** | Excessive sequence deconvolution allele groups from sample contamination or flow cell reuse with same barcode/mix | Apply library to a new or unused flow cell; repeat gene-specific PCR with fresh reagents |
 | **Super accurate basecalling / barcode trimming warning** | Sequencing did not use required basecalling settings | Repeat basecalling with correct settings per Protocol Guide |
 | **Sample sheet will not validate** | Missing values, wrong barcode format, non-tab-delimited file, or mix/calibrator mismatch | See [Sample Sheet Errors](sample-sheet-errors.md) for every message and its fix |
 
