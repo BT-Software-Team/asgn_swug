@@ -1,6 +1,6 @@
 # Sample Summary
 
-The highest-level overview of variants per sample. Only variants that pass the **Summarize** filter criteria appear here (see [Panel Filter Configurations](../configuration/panel-filters.md)). Gene entries also apply additional gene-specific rules (Table 4 in the source guide).
+The highest-level overview of variants per sample. Only variants that pass the **Summarize** filter criteria appear here (see [Panel Filter Configurations](../configuration/panel-filters.md)). Gene entries also apply additional gene-specific rules — see [Which Variants Appear in Sample Summary (by Gene)](#which-variants-appear-in-sample-summary-by-gene) below.
 
 **Access**
 

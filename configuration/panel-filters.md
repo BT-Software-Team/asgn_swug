@@ -15,6 +15,8 @@ Panel filters operate at two levels:
 - **Analyze** — variants included in variant-level results ([Variant Results](../analysis-results/variant-results.md))
 - **Summarize** — a subset of Analyzed variants that are also included in gene-level ([Genotype Summary](../analysis-results/genotype-summary.md)) and sample-level ([Sample Summary](../analysis-results/sample-summary.md)) results
 
+This lets variants of interest be elevated into the gene- and sample-level summaries, while additional variants of lesser interest can still be included at the variant level.
+
 The Summarize filter is always a subset of the Analyze filter — this is enforced in the UI. A variant that passes neither filter does not appear in any result.
 
 The table below shows where a variant appears depending on which filter it passes:
@@ -24,7 +26,9 @@ The table below shows where a variant appears depending on which filter it passe
 | Variant Results view / `variants.csv` | Included | Included |
 | `[Sample]_VARIANTS.CSV` / `.VCF` | Included | Included |
 | Genotype Summary view / `genotypes_summary.csv` | Not included | Included |
-| Sample Summary view / `sample_summary.csv` | Not included | Included |
+| Sample Summary view / `sample_summary.csv` | Not included | Included* |
+
+\* Sample Summary applies additional gene-specific rules on top of Summarize — see [Which Variants Appear in Sample Summary (by Gene)](../analysis-results/sample-summary.md#which-variants-appear-in-sample-summary-by-gene).
 
 ### Inclusion logic
 
@@ -33,6 +37,14 @@ For a variant to appear in Analyze or Summarize results, the following must be t
 ```
 Gene AND EITHER (Default OR ((ClinVar Classification OR VEP OR Inclusion List) NOT Exclusion List))
 ```
+
+In other words, a variant is included if it belongs to a selected gene, AND either it matches a default inclusion-list entry built into the active filter (see [Default Filter behavior](#default-filter-behavior) below for what the Default Filter includes), or it satisfies at least one of the following:
+
+- It is annotated with a selected ClinVar Classification.
+- It is annotated with a selected Variant Effect.
+- It is listed in the panel filter's own Inclusion List.
+
+Even if a variant satisfies one of these three criteria, it is not reported if it is also listed in the Exclusion List — the Exclusion List always takes precedence.
 
 ### Default Filter behavior
 
